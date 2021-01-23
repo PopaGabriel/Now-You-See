@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiecty_MLSA.Views.ProfilePage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Good Movie List" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="Body"/>
+            <ListView x:Name="ListGoodMovies" ItemTapped="ShowGoodMovies">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell x:Name="ImageCellBadProfilePage" Text="{Binding Name}" Detail="{Binding Description}"  ImageSource="{Binding Image}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="Bad Movie List" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="Body"/>
+            <ListView x:Name="ListBadMovies" ItemTapped="ShowBadMovies">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell x:Name="ImageCellBadProfilePage" Text="{Binding Name}" Detail="{Binding Job}"  ImageSource="{Binding Image}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="ButtonShowAllMovies"  Text="Show Full List of movies" Clicked="ShowAllMovies"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

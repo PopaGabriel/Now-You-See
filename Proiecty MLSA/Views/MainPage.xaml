@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="Proiecty_MLSA.MainPage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="End" Padding="0,0,10,0">
+            <Button x:Name="ProfileButton" Text="Profile" TextColor="White" BackgroundColor="DeepSkyBlue" Clicked="GoToProfilePage"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <StackLayout Spacing="10">
+        <ImageButton x:Name="Image_Search" WidthRequest="250" HeightRequest="250" CornerRadius="250" Margin="20"
+        BackgroundColor="#e07a5f"
+        Source="bed_double_fill.jpg"            
+        BorderColor="#8FFBE1"
+        HorizontalOptions="Center"
+        VerticalOptions="Start"
+        Clicked="Recomanda">
+        </ImageButton>
+        <Frame BackgroundColor="#3d405b" Padding="24" CornerRadius="0">
+            <Label Text="Fresh New Releases" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
+        </Frame>
+        <ListView x:Name="ListViewMainPage" ItemTapped="LetMeSeeTheMovie">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ImageCell x:Name="ImageCellMainPage" Text="{Binding Name}" ImageSource="{Binding Image}" Detail="{Binding Mark_from_site}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+    
+</ContentPage>

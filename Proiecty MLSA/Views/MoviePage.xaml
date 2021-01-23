@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiecty_MLSA.Views.MoviePage">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout x:Name="MovieStack" Orientation="Vertical" Spacing="0">
+            <Frame Padding="50" Margin="0" BackgroundColor="#264653">
+                <StackLayout>
+                    <Image Source="{Binding Image}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                    <Label Text="{Binding Name}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
+                    <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Label x:Name="lbCo" Text="Mark"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Label x:Name="lbcopywrite" Text="{Binding Mark_from_site}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                <Label Text="DESCRIPTION" HorizontalOptions="CenterAndExpand" FontSize="20"/>
+                <Label Text="{Binding Description}" FontSize="16"/>
+                    <Label Text="Team Members" HorizontalOptions="CenterAndExpand" FontSize="Body"/>
+                    <ListView x:Name="ListViewMoviePage" BackgroundColor="#2a9d8f">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ImageCell x:Name="ImageCellMoviePage" Text="{Binding Name}" Detail="{Binding Job}"  ImageSource="{Binding Image}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout>
+                <Grid x:Name="Buttons" ColumnDefinitions="50*, 50*" ColumnSpacing="0" HorizontalOptions="FillAndExpand"  >
+                    <Button Text="Add Movie" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="AddToUserList" Grid.Column="0" BackgroundColor="ForestGreen"/>
+                    <Button Text="Remove Movie" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="RemoveFromUserList" Grid.Column="1" BackgroundColor="DarkRed"/>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
