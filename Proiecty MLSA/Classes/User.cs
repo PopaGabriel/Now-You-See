@@ -12,7 +12,7 @@ namespace Proiecty_MLSA.Classes
         {
             Movie A = (Movie)x;
             Movie B = (Movie)y;
-            return ((new CaseInsensitiveComparer()).Compare(B.Mark_from_site, A.Mark_from_site));
+            return ((new CaseInsensitiveComparer()).Compare(B.vote_average, A.vote_average));
         }
     }
     public class User
@@ -23,11 +23,8 @@ namespace Proiecty_MLSA.Classes
             MovieList = new List<Movie>();
             BadMovies = new List<Movie>();
             GoodMovies = new List<Movie>();
-            for(int i = 0; i < 30; i++)
-            {
-                MovieList.Add(new Movie("Movie"+" "+i, i));
-            }
-            MovieList = MovieList.OrderBy(i => i.Mark_from_site).ToList();
+
+            MovieList = MovieList.OrderBy(i => i.vote_average).ToList();
             
             if (MovieList.Count <= 5)
                 GoodMovies = MovieList;

@@ -4,7 +4,10 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "Proiecty MLSA.Android.dll" comes first in this list. */
 		"Proiecty MLSA.Android.dll",
 		"FormsViewGroup.dll",
+		"Newtonsoft.Json.Bson.dll",
+		"Newtonsoft.Json.dll",
 		"Proiecty MLSA.dll",
+		"System.Net.Http.Formatting.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",
 		"Xamarin.Android.Arch.Lifecycle.Common.dll",

@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "QH+D/ojwTq9Ou1GXsrGZAcMC/wwsFTpjwPR2/8di8mcICUNvbcb8PKF8wYD6U7ODRXVU59Jj/iuZ6ploxcvM9w==",
+  "dgSpecHash": "4SSbOQUUxaCa92GYPtAz9z5AeRYTr6UrYHZiICOdUqe8mcszqKBiNTyEQj7ZwUGeq20xSEyiux587LRb1wF9TQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Catalin\\Desktop\\Proecty HackLsac\\Proiecty MLSA\\Proiecty MLSA.iOS\\Proiecty MLSA.iOS.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Catalin\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
+    "C:\\Users\\Catalin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Catalin\\.nuget\\packages\\newtonsoft.json.bson\\1.0.1\\newtonsoft.json.bson.1.0.1.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
   ],

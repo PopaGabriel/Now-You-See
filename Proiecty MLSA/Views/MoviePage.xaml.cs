@@ -17,7 +17,7 @@ namespace Proiecty_MLSA.Views
         {
             InitializeComponent();
             MovieStack.BindingContext = Movielet;
-            ListViewMoviePage.ItemsSource = Movielet.Team;
+            //ListViewMoviePage.ItemsSource = Movielet.Team;
             BindingContext = this;
         }
         public void AddToUserList(object sender,EventArgs e)

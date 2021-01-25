@@ -22,7 +22,7 @@
         <ListView x:Name="ListViewMainPage" ItemTapped="LetMeSeeTheMovie">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell x:Name="ImageCellMainPage" Text="{Binding Name}" ImageSource="{Binding Image}" Detail="{Binding Mark_from_site}"/>
+                    <ImageCell x:Name="ImageCellMainPage" Text="{Binding title}" ImageSource="{Binding poster_path}" Detail="{Binding vote_average}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

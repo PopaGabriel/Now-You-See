@@ -7,17 +7,17 @@
         <StackLayout x:Name="MovieStack" Orientation="Vertical" Spacing="0">
             <Frame Padding="50" Margin="0" BackgroundColor="#264653">
                 <StackLayout>
-                    <Image Source="{Binding Image}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
-                    <Label Text="{Binding Name}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
+                        <Image Source="{Binding poster_path}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                    <Label Text="{Binding title}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
                     <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                         <Label x:Name="lbCo" Text="Mark"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                        <Label x:Name="lbcopywrite" Text="{Binding Mark_from_site}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                        <Label x:Name="lbcopywrite" Text="{Binding vote_average}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                     </StackLayout>
                 </StackLayout>
             </Frame>
             <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
                 <Label Text="DESCRIPTION" HorizontalOptions="CenterAndExpand" FontSize="20"/>
-                <Label Text="{Binding Description}" FontSize="16"/>
+                <Label Text="{Binding overview}" FontSize="16"/>
                     <Label Text="Team Members" HorizontalOptions="CenterAndExpand" FontSize="Body"/>
                     <ListView x:Name="ListViewMoviePage" BackgroundColor="#2a9d8f">
                     <ListView.ItemTemplate>
