@@ -10,15 +10,16 @@ namespace Proiecty_MLSA.Static_Values
 {
     public class ApiHelper
     {
-        private static HttpClient ApiClient = null;
+        private HttpClient ApiClient;
         private static ApiHelper instance = null;
 
         private const string UriStringBase = "https://api.themoviedb.org/3/";
         // Format: [UriStringMovieGet][ID]?api_key=[ApiKey]
         // Example: https://api.themoviedb.org/3/movie/2000?api_key=a54067ba9e2ae368e6a89cc91f806adc&language=en-US
-        private const string UriStringMovieGet = UriStringBase + "movie/";
-        private const string ApiKey = "a54067ba9e2ae368e6a89cc91f806adc";
-        private const string PopularApiAddress = "https://api.themoviedb.org/3/movie/popular?api_key=a54067ba9e2ae368e6a89cc91f806adc&language=en-US&page=1";
+        public const string UriStringMovieGet = UriStringBase + "movie/";
+        public const string ApiKey = "a54067ba9e2ae368e6a89cc91f806adc";
+        public const string genresList = UriStringBase + "genre/movie/list?api_key=" + ApiKey;
+        public const string PopularApiAddress = "https://api.themoviedb.org/3/movie/popular?api_key=a54067ba9e2ae368e6a89cc91f806adc&language=en-US&page=1";
 
         public static ApiHelper getInstance()
         {
@@ -36,7 +37,7 @@ namespace Proiecty_MLSA.Static_Values
 
         public async Task<List<Movie>> GetPopularMovies()
         {
-            using(HttpResponseMessage message = await ApiHelper.ApiClient.GetAsync(PopularApiAddress))
+            using (HttpResponseMessage message = await ApiClient.GetAsync(PopularApiAddress))
             {
                 if (message.IsSuccessStatusCode)
                 {
@@ -60,6 +61,10 @@ namespace Proiecty_MLSA.Static_Values
                 else
                     return null;
             }
+        }
+        public HttpClient GetClient()
+        {
+            return ApiClient;
         }
     }
 }

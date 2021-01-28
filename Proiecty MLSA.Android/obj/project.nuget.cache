@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2EIwGzKYBRWBe1i1SpJXMI+sSpeb5OT+ta4k7iw7Xvpm+PPZ8u6zQ7TTI1dIjjddeN+GOu3RA4K8RLr/+ujpSg==",
+  "dgSpecHash": "d+WNZKdGxuBO+a5sXWWcMJ1yZ/mq+BZJ9/6nlOafuBDdlnnu4Z2TP4gwiS0VqwM4n9qTCSw9YxuObuMgZsxnXA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\Proecty HackLsac\\Proiecty MLSA\\Proiecty MLSA.Android\\Proiecty MLSA.Android.csproj",
+  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\Mlsa\\Now-You-See\\Proiecty MLSA.Android\\Proiecty MLSA.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Catalin\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\Catalin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
