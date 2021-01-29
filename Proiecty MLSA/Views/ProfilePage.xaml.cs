@@ -10,7 +10,7 @@ namespace Proiecty_MLSA.Views
     public partial class ProfilePage : ContentPage
     {
         User user { set; get; }
-        public ProfilePage(User user)
+        public ProfilePage()
         {
             this.user = user;
             InitializeComponent();

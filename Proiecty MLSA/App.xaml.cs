@@ -15,11 +15,16 @@ namespace Proiecty_MLSA
             MainPage = new NavigationPage (new MainPage());
         }
 
+        private async void enterData()
+        {
+            await Task.Run(() => User.getInstance());
+            await Task.Run(() => Genres.getInstance());
+            await Task.Run(() => ApiHelper.getInstance());
+        }
+
         protected override void OnStart()
         {
-            Task.Run(() => User.getInstance());
-            Task.Run(()=> Genres.getInstance());
-            Task.Run(() => ApiHelper.getInstance());
+            enterData();
         }
 
         protected override void OnSleep()

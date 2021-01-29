@@ -41,7 +41,7 @@ namespace Proiecty_MLSA
         }
         private async void GoToProfilePage(object sender, EventArgs e)
         {
-            //await Navigation.PushAsync(new ProfilePage(user));
+            await Navigation.PushAsync(new ProfilePage());
         }
         private async void LetMeSeeTheMovie(object sender, ItemTappedEventArgs e)
         {
