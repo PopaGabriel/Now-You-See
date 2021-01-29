@@ -1,8 +1,8 @@
-﻿using Proiecty_MLSA.Static_Values;
-using System;
+﻿using Newtonsoft.Json;
+using Proiecty_MLSA.Static_Values;
+using System.IO;
 using System.Threading.Tasks;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Proiecty_MLSA
 {
@@ -16,6 +16,9 @@ namespace Proiecty_MLSA
 
         protected override void OnStart()
         {
+            string route = "D:\\fileTest.txt";
+            FileStream fs = new FileStream(route, FileMode.Create);
+            
             var t1 = Task.Factory.StartNew(() => Genres.getInstance());
             var t2 = Task.Factory.StartNew(() => ApiHelper.getInstance());
         }

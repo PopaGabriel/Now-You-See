@@ -1,9 +1,5 @@
 ﻿using Proiecty_MLSA.Classes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -20,7 +16,7 @@ namespace Proiecty_MLSA.Views
             //ListViewMoviePage.ItemsSource = Movielet.Team;
             BindingContext = this;
         }
-        public void AddToUserList(object sender,EventArgs e)
+        public void AddToUserList(object sender, EventArgs e)
         {
 
         }

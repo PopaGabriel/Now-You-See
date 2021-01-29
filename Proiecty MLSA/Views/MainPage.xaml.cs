@@ -31,7 +31,7 @@ namespace Proiecty_MLSA
                 ListViewMainPage.ItemsSource = NewMovies;
                 BindingContext = this;
             }
-                
+
         }
         private async void Recomanda(object sender, EventArgs e)
         {

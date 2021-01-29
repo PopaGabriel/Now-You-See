@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Proiecty_MLSA.Static_Values
@@ -44,7 +43,7 @@ namespace Proiecty_MLSA.Static_Values
                     Movie movie;
                     List<Movie> listMovies = new List<Movie>();
                     Root root = await message.Content.ReadAsAsync<Root>();
-                    
+
                     for (int i = 0; i < root.results.Count; i++)
                     {
                         movie = new Movie();

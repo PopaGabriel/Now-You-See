@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Proiecty_MLSA.Classes
 {
@@ -62,11 +61,11 @@ namespace Proiecty_MLSA.Classes
         public void fillGenres(List<int> list)
         {
             Genre genre;
-            if(genres == null)
+            if (genres == null)
             {
                 genres = new List<Genre>();
             }
-            for(int i = 0; i < list.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
                 genre = new Genre();
                 genre.id = list[i];

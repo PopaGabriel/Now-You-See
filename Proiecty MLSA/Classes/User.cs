@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Proiecty_MLSA.Classes
 {
@@ -25,7 +24,7 @@ namespace Proiecty_MLSA.Classes
             GoodMovies = new List<Movie>();
 
             MovieList = MovieList.OrderBy(i => i.vote_average).ToList();
-            
+
             if (MovieList.Count <= 5)
                 GoodMovies = MovieList;
             else
@@ -34,7 +33,7 @@ namespace Proiecty_MLSA.Classes
             if (MovieList.Count > 5 && MovieList.Count < 10)
                 BadMovies = MovieList.GetRange(5, MovieList.Count - 5);
             else
-                BadMovies = MovieList.GetRange(MovieList.Count-5, 5);
+                BadMovies = MovieList.GetRange(MovieList.Count - 5, 5);
         }
         public String UserName { set; get; }
         public List<Movie> MovieList { set; get; }
