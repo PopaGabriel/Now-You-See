@@ -33,7 +33,9 @@ namespace Proiecty_MLSA
         }
         private async void Recomanda(object sender, EventArgs e)
         {
-            NewMovies.ForEach(Console.WriteLine);
+            
+            Console.Out.WriteLine(User.getInstance() + "\nDE ce?");
+
             if (Device.RuntimePlatform == Device.Android)
                 await Navigation.PopAsync();
         }

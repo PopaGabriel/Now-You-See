@@ -5,7 +5,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Forms.Internals;
 
 namespace Proiecty_MLSA.Classes
 {
@@ -76,6 +78,16 @@ namespace Proiecty_MLSA.Classes
             text = File.ReadAllText(submittedFilePath);
             Console.WriteLine(text + "Dap Florin");
 
+        }
+        public override string ToString()
+        {
+            StringBuilder GoodString = new StringBuilder();
+            StringBuilder BadString = new StringBuilder();
+            foreach (Movie movie in GoodMovies)
+                GoodString.Append(movie);
+            foreach (Movie movie in BadMovies)
+                BadMovies.Append(movie);
+            return UserName + " " + GoodString + " " + BadString;
         }
     }
     public class MarkSort : IComparer
