@@ -13,6 +13,17 @@ namespace Proiecty_MLSA.Classes
             return id + " " + name;
         }
     }
+    public class Saved_Movie_Data
+    {
+        public Saved_Movie_Data(double rating, int id)
+        {
+            this.rating = rating;
+            this.id = id;
+        }
+        public double rating { set; get; }
+
+        public int id { get; set; }
+    }
 
     public class ProductionCompany
     {
@@ -76,5 +87,10 @@ namespace Proiecty_MLSA.Classes
         {
             return "Overview: " + overview + "\n vote_average: " + vote_average + "\nTitle: " + title + "\nPoster_Address: " + poster_path;
         }
+    }
+
+    public class Saved_Movie : Movie
+    {
+        public int savedRating { get; set; }
     }
 }

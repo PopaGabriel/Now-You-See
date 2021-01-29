@@ -12,13 +12,16 @@ namespace Proiecty_MLSA.Static_Values
         private HttpClient ApiClient;
         private static ApiHelper instance = null;
 
-        private const string UriStringBase = "https://api.themoviedb.org/3/";
+        public const string UriStringBase = "https://api.themoviedb.org/3/";
+
         // Format: [UriStringMovieGet][ID]?api_key=[ApiKey]
         // Example: https://api.themoviedb.org/3/movie/2000?api_key=a54067ba9e2ae368e6a89cc91f806adc&language=en-US
         public const string UriStringMovieGet = UriStringBase + "movie/";
         public const string ApiKey = "a54067ba9e2ae368e6a89cc91f806adc";
         public const string genresList = UriStringBase + "genre/movie/list?api_key=" + ApiKey;
-        public const string PopularApiAddress = "https://api.themoviedb.org/3/movie/popular?api_key=a54067ba9e2ae368e6a89cc91f806adc&language=en-US&page=1";
+        //https://api.themoviedb.org/3/movie/popular?api_key=a54067ba9e2ae368e6a89cc91f806adc&language=en-US&page=1
+        public const string PopularApiAddress = UriStringBase + "popular?api_key=" + ApiKey + "&language=en-US&page=1";
+        public const string languageAM = "language=en-US";
 
         public static ApiHelper getInstance()
         {
@@ -36,10 +39,13 @@ namespace Proiecty_MLSA.Static_Values
 
         public async Task<List<Movie>> GetPopularMovies()
         {
-            using (HttpResponseMessage message = await ApiClient.GetAsync(PopularApiAddress))
+            Console.WriteLine("Am intrat sefule3");
+            using (HttpResponseMessage message = await ApiClient.GetAsync("https://api.themoviedb.org/3/movie/popular?api_key=a54067ba9e2ae368e6a89cc91f806adc&language=en-US&page=1"))
             {
+                Console.WriteLine("Am intrat sefule2");
                 if (message.IsSuccessStatusCode)
                 {
+                    Console.WriteLine("Am intrat sefule");
                     Movie movie;
                     List<Movie> listMovies = new List<Movie>();
                     Root root = await message.Content.ReadAsAsync<Root>();
@@ -56,6 +62,20 @@ namespace Proiecty_MLSA.Static_Values
                         listMovies.Add(movie);
                     }
                     return listMovies;
+                }
+                else
+                    return null;
+            }
+        }
+
+        public async Task<Movie> GetMovie(int id)
+        {
+            using (HttpResponseMessage message = await ApiClient.GetAsync(UriStringMovieGet + id + "?api_key=" + ApiKey + "&" + languageAM))
+            {
+                if (message.IsSuccessStatusCode)
+                {
+                    Movie movie = await message.Content.ReadAsAsync<Movie>();
+                    return movie;
                 }
                 else
                     return null;

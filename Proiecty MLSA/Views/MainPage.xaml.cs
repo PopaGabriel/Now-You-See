@@ -11,13 +11,11 @@ namespace Proiecty_MLSA
     public partial class MainPage : ContentPage
     {
         private List<Movie> NewMovies { set; get; }
-        private User user;
         public MainPage()
         {
             InitializeComponent();
-            ApiHelper apiHelper = ApiHelper.getInstance();
 
-            var t1 = Task.Factory.StartNew(() => makePopularMovies());
+            Task.Run(() => makePopularMovies());
 
         }
         public void makePopularMovies()
@@ -41,7 +39,7 @@ namespace Proiecty_MLSA
         }
         private async void GoToProfilePage(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ProfilePage(user));
+            //await Navigation.PushAsync(new ProfilePage(user));
         }
         private async void LetMeSeeTheMovie(object sender, ItemTappedEventArgs e)
         {

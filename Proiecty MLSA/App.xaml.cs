@@ -11,16 +11,13 @@ namespace Proiecty_MLSA
         public App()
         {
             InitializeComponent();
-            //MainPage = new NavigationPage (new MainPage());
+            MainPage = new NavigationPage (new MainPage());
         }
 
         protected override void OnStart()
         {
-            string route = "D:\\fileTest.txt";
-            FileStream fs = new FileStream(route, FileMode.Create);
-            
-            var t1 = Task.Factory.StartNew(() => Genres.getInstance());
-            var t2 = Task.Factory.StartNew(() => ApiHelper.getInstance());
+            Task.Run(()=> Genres.getInstance());
+            Task.Run(() => ApiHelper.getInstance());
         }
 
         protected override void OnSleep()
