@@ -75,6 +75,7 @@ namespace Proiecty_MLSA.Static_Values
                 if (message.IsSuccessStatusCode)
                 {
                     Movie movie = await message.Content.ReadAsAsync<Movie>();
+                    movie.poster_path = "https://image.tmdb.org/t/p/original" + movie.poster_path;
                     return movie;
                 }
                 else
