@@ -3,12 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proiecty_MLSA.Views.ProfilePage">
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
             <Label Text="Good Movie List" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="Body"/>
             <ListView x:Name="ListGoodMovies" ItemTapped="ShowGoodMovies">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ImageCell x:Name="ImageCellBadProfilePage" Text="{Binding Name}" Detail="{Binding Description}"  ImageSource="{Binding Image}"/>
+                        <ImageCell x:Name="ImageCellBadProfilePage" Text="{Binding title}" Detail="{Binding vote_average}"  ImageSource="{Binding poster_path}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
@@ -16,7 +16,7 @@
             <ListView x:Name="ListBadMovies" ItemTapped="ShowBadMovies">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ImageCell x:Name="ImageCellBadProfilePage" Text="{Binding Name}" Detail="{Binding Job}"  ImageSource="{Binding Image}"/>
+                        <ImageCell x:Name="ImageCellBadProfilePage" Text="{Binding title}" Detail="{Binding vote_average}"  ImageSource="{Binding poster_path}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>

@@ -12,7 +12,7 @@ namespace Proiecty_MLSA.Views
         User user { set; get; }
         public ProfilePage()
         {
-            this.user = user;
+            this.user = User.getInstance();
             InitializeComponent();
             ListGoodMovies.ItemsSource = user.GoodMovies;
             ListBadMovies.ItemsSource = user.BadMovies;

@@ -1198,11 +1198,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Catalin\\Desktop\\Mlsa\\Now-You-See\\Proiecty MLSA.iOS\\Proiecty MLSA.iOS.csproj",
+      "projectUniqueName": "C:\\Users\\Catalin\\Desktop\\MLSA3\\Now-You-See\\Proiecty MLSA.iOS\\Proiecty MLSA.iOS.csproj",
       "projectName": "Proiecty MLSA.iOS",
-      "projectPath": "C:\\Users\\Catalin\\Desktop\\Mlsa\\Now-You-See\\Proiecty MLSA.iOS\\Proiecty MLSA.iOS.csproj",
+      "projectPath": "C:\\Users\\Catalin\\Desktop\\MLSA3\\Now-You-See\\Proiecty MLSA.iOS\\Proiecty MLSA.iOS.csproj",
       "packagesPath": "C:\\Users\\Catalin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Catalin\\Desktop\\Mlsa\\Now-You-See\\Proiecty MLSA.iOS\\obj\\",
+      "outputPath": "C:\\Users\\Catalin\\Desktop\\MLSA3\\Now-You-See\\Proiecty MLSA.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1223,8 +1223,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "C:\\Users\\Catalin\\Desktop\\Mlsa\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj": {
-              "projectPath": "C:\\Users\\Catalin\\Desktop\\Mlsa\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj"
+            "C:\\Users\\Catalin\\Desktop\\MLSA3\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj": {
+              "projectPath": "C:\\Users\\Catalin\\Desktop\\MLSA3\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj"
             }
           }
         }

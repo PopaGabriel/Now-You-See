@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K0S6ZEw+3RveEtstwvXCfCmCKb5QWtI3YjvZoEe5rU1F4ovI/cuMpPvML0M4C398hCU5WJPlaI8TKf0WfmYh+A==",
+  "dgSpecHash": "J6ZWn/LT/tvLFMAtQjnN1tMc+lDHm+HKEp21/FdLhjw4dwvGzOEyI44nY0AsF2+HctooWHU78jHtP6nJr5mdfQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\Mlsa\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj",
+  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\MLSA3\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Catalin\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\Catalin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
