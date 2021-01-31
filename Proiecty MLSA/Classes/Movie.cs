@@ -91,6 +91,18 @@ namespace Proiecty_MLSA.Classes
 
     public class Saved_Movie : Movie
     {
-        public int savedRating { get; set; }
+        public double savedRating { get; set; }
+        
+        public Saved_Movie(double savedRating, Movie movie)
+        {
+            poster_path = movie.poster_path;
+            popularity = movie.popularity;
+            runtime = movie.runtime;
+            overview = movie.overview;
+            id = movie.id;
+            genres = movie.genres;
+            genre_ids = movie.genre_ids;
+            this.savedRating = savedRating;
+        }
     }
 }

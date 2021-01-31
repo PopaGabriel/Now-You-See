@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1R4IkTuOB87FEPb81wwFD9H7899DDuZMmn8Mo7yqAqWsRL1wK7/fFuYfynUKp3y+SYBbL7SBLJJ+PDTN0aLpjA==",
+  "dgSpecHash": "+s0vYwp2L0lcQ/yVB6fFdXuNbtdpQsDGWekeiCzBKe9CVRRFjj759UeNMJ8OFu6jYaXTg8SHxo0FuYAfbdonEA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\MLSA3\\Now-You-See\\Proiecty MLSA.iOS\\Proiecty MLSA.iOS.csproj",
+  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\MLSA\\Now-You-See\\Proiecty MLSA.iOS\\Proiecty MLSA.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Catalin\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\Catalin\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
