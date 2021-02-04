@@ -14,6 +14,8 @@ namespace Proiecty_MLSA
         public MainPage()
         {
             InitializeComponent();
+            Xamarin.Forms.Color BarBackgroundColor = ColorPallet.TextColorInfo;
+
             ProfileButton.TextColor = ColorPallet.TextColorButtons;
             ProfileButton.BackgroundColor = ColorPallet.BackgroundButton;
 
