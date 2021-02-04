@@ -2,27 +2,41 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              x:Class="Proiecty_MLSA.MainPage">
+    
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" HorizontalOptions="End" Padding="0,0,10,0">
-            <Button x:Name="ProfileButton" Text="Profile" TextColor="White" BackgroundColor="DeepSkyBlue" Clicked="GoToProfilePage"/>
+        <StackLayout Orientation="Horizontal" Padding="0,0,100,0" Spacing="0">
+            <Button x:Name="ProfileButton" 
+                    Text="Profile"  
+                    Clicked="GoToProfilePage"/>
+            <SearchBar x:Name="NavigationBar"
+                       Placeholder="Search........"
+                       
+                       />
         </StackLayout>
     </NavigationPage.TitleView>
     <StackLayout Spacing="10">
-        <ImageButton x:Name="Image_Search" WidthRequest="250" HeightRequest="250" CornerRadius="250" Margin="20"
-        BackgroundColor="#e07a5f"
-        Source="bed_double_fill.jpg"            
-        BorderColor="#8FFBE1"
-        HorizontalOptions="Center"
-        VerticalOptions="Start"
+        <ImageButton x:Name="Image_Search" 
+                     WidthRequest="250" 
+                     HeightRequest="250" 
+                     CornerRadius="250" 
+                     Margin="20"
+                     Source="bed_double_fill.jpg"            
+                     BorderColor="#8FFBE1"        
+                     HorizontalOptions="Center"
         Clicked="Recomanda">
         </ImageButton>
-        <Frame BackgroundColor="#3d405b" Padding="24" CornerRadius="0">
-            <Label Text="Fresh New Releases" HorizontalTextAlignment="Center" TextColor="White" FontSize="16"/>
+        <Frame x:Name="FrameHotNewReleases" Padding="24" CornerRadius="0">
+            <Label x:Name="LabelInsideTheHotReleasesFrame" Text="Fresh New Releases" HorizontalTextAlignment="Center" FontSize="16"/>
         </Frame>
         <ListView x:Name="ListViewMainPage" ItemTapped="LetMeSeeTheMovie">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ImageCell x:Name="ImageCellMainPage" Text="{Binding title}" ImageSource="{Binding poster_path}" Detail="{Binding vote_average}"/>
+                    <ImageCell x:Name="ImageCellMainPage"
+                               Text="{Binding title}"
+                               ImageSource="{Binding poster_path}"
+                               Detail="{Binding vote_average}"
+                               DetailColor="AliceBlue"
+                               />
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

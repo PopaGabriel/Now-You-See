@@ -48,6 +48,14 @@ namespace Proiecty_MLSA.Classes
 
     public class Movie
     {
+        public Movie()
+        {
+            genres = new List<Genre>();
+            genre_ids = new List<int>();
+            production_companies = new List<ProductionCompany>();
+            production_countries = new List<ProductionCountry>();
+            spoken_languages = new List<SpokenLanguage>();
+        }
         public bool adult { get; set; }
         public int budget { get; set; }
         public List<Genre> genres { get; set; }
@@ -92,7 +100,10 @@ namespace Proiecty_MLSA.Classes
     public class Saved_Movie : Movie
     {
         public double savedRating { get; set; }
-        
+        public Saved_Movie()
+        {
+            
+        }
         public Saved_Movie(double savedRating, Movie movie)
         {
             poster_path = movie.poster_path;

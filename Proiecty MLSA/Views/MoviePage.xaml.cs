@@ -9,7 +9,7 @@ namespace Proiecty_MLSA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MoviePage : ContentPage
     {
-        public MoviePage(Movie Movielet)
+        public MoviePage(Saved_Movie Movielet)
         {
             InitializeComponent();
             MovieStack.BindingContext = Movielet;

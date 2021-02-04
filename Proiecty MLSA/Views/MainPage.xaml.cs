@@ -10,11 +10,19 @@ namespace Proiecty_MLSA
 {
     public partial class MainPage : ContentPage
     {
-        private List<Movie> NewMovies { set; get; }
+        private List<Saved_Movie> NewMovies { set; get; }
         public MainPage()
         {
             InitializeComponent();
+            ProfileButton.TextColor = ColorPallet.TextColorButtons;
+            ProfileButton.BackgroundColor = ColorPallet.BackgroundButton;
 
+            BackgroundColor = ColorPallet.BackgroundMain;
+            Image_Search.BackgroundColor = ColorPallet.BackgroundMain;
+
+            FrameHotNewReleases.BackgroundColor = ColorPallet.BackgroundLabel;
+            LabelInsideTheHotReleasesFrame.TextColor = ColorPallet.TextColorInfo;
+            
             Task.Run(() => makePopularMovies());
 
         }

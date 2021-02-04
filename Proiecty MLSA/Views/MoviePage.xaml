@@ -12,6 +12,7 @@
                         <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
                             <Label x:Name="lbCo" Text="Mark"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                             <Label x:Name="lbcopywrite" Text="{Binding vote_average}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            <Label x:Name="lbDescription" Text="{Binding overview}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                         </StackLayout>
                     </StackLayout>
                 </Frame>

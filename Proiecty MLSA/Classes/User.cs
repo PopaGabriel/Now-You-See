@@ -39,28 +39,19 @@ namespace Proiecty_MLSA.Classes
 
         public IInformationBuilder setAge(int age)
         {
-            if (age == null)
-                throw new NotImplementedException();
-            else
-                this.age = age;
+            this.age = age;
             return this;
         }
 
         public IInformationBuilder setAverageRating(double AverageRating)
         {
-            if (AverageRating == null)
-                throw new NotImplementedException();
-            else
-                this.AverageRating = AverageRating;
+            this.AverageRating = AverageRating;
             return this;
         }
 
         public IInformationBuilder setName(string Name)
         {
-            if (Name == null)
-                throw new NotImplementedException();
-            else
-                this.Name = Name;
+            this.Name = Name;
             return this;
         }
         public Information Build()
@@ -148,7 +139,7 @@ namespace Proiecty_MLSA.Classes
             using (StreamWriter file = new StreamWriter(submittedFilePath))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                List<Movie> movies = ApiHelper.getInstance().GetPopularMovies().Result;
+                List<Saved_Movie> movies = ApiHelper.getInstance().GetPopularMovies().Result;
                 serializer.Serialize(file, movies);
             }
 

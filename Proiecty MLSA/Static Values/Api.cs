@@ -37,7 +37,7 @@ namespace Proiecty_MLSA.Static_Values
             ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async Task<List<Movie>> GetPopularMovies()
+        public async Task<List<Saved_Movie>> GetPopularMovies()
         {
             Console.WriteLine("Am intrat sefule3");
             using (HttpResponseMessage message = await ApiClient.GetAsync("https://api.themoviedb.org/3/movie/popular?api_key=a54067ba9e2ae368e6a89cc91f806adc&language=en-US&page=1"))
@@ -46,13 +46,13 @@ namespace Proiecty_MLSA.Static_Values
                 if (message.IsSuccessStatusCode)
                 {
                     Console.WriteLine("Am intrat sefule");
-                    Movie movie;
-                    List<Movie> listMovies = new List<Movie>();
+                    Saved_Movie movie;
+                    List<Saved_Movie> listMovies = new List<Saved_Movie>();
                     Root root = await message.Content.ReadAsAsync<Root>();
 
                     for (int i = 0; i < root.results.Count; i++)
                     {
-                        movie = new Movie();
+                        movie = new Saved_Movie();
                         movie.adult = root.results[i].adult;
                         movie.fillGenres(root.results[i].genre_ids);
                         movie.title = root.results[i].title;
