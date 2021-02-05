@@ -1,9 +1,12 @@
-﻿using Proiecty_MLSA.Classes;
+﻿using Paket;
+using Proiecty_MLSA.Classes;
 using Proiecty_MLSA.Static_Values;
 using Proiecty_MLSA.Views;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace Proiecty_MLSA
@@ -16,16 +19,23 @@ namespace Proiecty_MLSA
             InitializeComponent();
             InitializeComponentColors();
             Task.Run(() => makePopularMovies());
-
+            
+            ICommand refreshCommand = new Command(() =>
+            {
+                RefreshMain.IsRefreshing = false;
+            });
+            RefreshMain.Command = refreshCommand;
+            
         }
         private void InitializeComponentColors()
         {
+            
             NavigationBar.CancelButtonColor = ColorPallet.BackgroundMain;
             NavigationBar.TextColor = ColorPallet.BackgroundMain;
 
             ProfileButton.TextColor = ColorPallet.TextColorButtons;
             ProfileButton.BackgroundColor = ColorPallet.BackgroundButton;
-
+            
             BackgroundColor = ColorPallet.BackgroundMain;
 
             Image_Search.BackgroundColor = ColorPallet.BackgroundMain;
@@ -42,7 +52,7 @@ namespace Proiecty_MLSA
             {
                 NewMovies = apiHelper.GetPopularMovies().Result;
 
-                ListViewMainPage.ItemsSource = NewMovies;
+                ÇollectionViewMainPage.ItemsSource = NewMovies;
                 BindingContext = this;
             }
 
@@ -59,9 +69,17 @@ namespace Proiecty_MLSA
         {
             await Navigation.PushAsync(new ProfilePage());
         }
-        private async void LetMeSeeTheMovie(object sender, ItemTappedEventArgs e)
+
+        private async void CollectionViewMainPage_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            await Navigation.PushAsync(new MoviePage(NewMovies[e.ItemIndex]));
+            var SelectedMovie = e.CurrentSelection.FirstOrDefault() as Saved_Movie;
+            if (SelectedMovie == null)
+                return;
+
+            await Navigation.PushAsync(new MoviePage(SelectedMovie));
+
+            ((CollectionView)sender).SelectedItem = null;
+
         }
     }
 }

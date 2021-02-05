@@ -1,16 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:Proiecty_MLSA.Classes"
+             x:DataType="viewmodels:Saved_Movie"
+             xmlns:models="clr-namespace:Proiecty_MLSA"
              x:Class="Proiecty_MLSA.Views.ProfilePage">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
-            <Label Text="Good Movie List" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="Body"/>
-            <RefreshView RefreshColor="Aqua"
+        <StackLayout Orientation="Vertical" 
+                     VerticalOptions="CenterAndExpand">
+            <Label Text="Good Movie List" 
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" 
+                   FontSize="Body"/>
+            <RefreshView x:Name="RefreshGood"
+                         RefreshColor="Aqua"
                          HorizontalOptions="CenterAndExpand">
                 <CollectionView x:Name="ListGoodMovies" 
                             SelectionMode="Single"
-                            SelectionChanged="ListGoodMovies_SelectionChanged"
-                            ItemsSource = "{Binding GoodMovies}"
+                            SelectionChanged="ListMovies_SelectionChanged"
                             EmptyView="Empty list so far :("
                             Grid.ColumnSpan="2">
                     <CollectionView.ItemsLayout>
@@ -18,7 +25,52 @@
                     </CollectionView.ItemsLayout>
                     
                     <CollectionView.ItemTemplate>
-                        <DataTemplate>
+                        <DataTemplate x:DataType="viewmodels:Saved_Movie">
+                            <Grid x:Name="GridMain" Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.RowSpan="2"
+                                        Source="{Binding poster_path}"
+                                        Aspect="AspectFill"
+                                        HeightRequest="60"
+                                        WidthRequest="60" />
+                                <Label Grid.Column="1"
+                                       Text="{Binding title}"
+                                       FontAttributes="Bold" />
+                                <Label Grid.Row="1"
+                                       Grid.Column="1"
+                                       Text="{Binding vote_average}"
+                                       FontAttributes="Italic"
+                                       VerticalOptions="End" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+            <Label Text="Bad Movie List" 
+                   VerticalOptions="CenterAndExpand" 
+                   HorizontalOptions="CenterAndExpand" 
+                   FontSize="Body"/>
+            <RefreshView x:Name="RefreshBad"
+                         RefreshColor="HotPink"
+                         HorizontalOptions="CenterAndExpand">
+                <CollectionView x:Name="ListBadMovies" 
+                            SelectionMode="Single"
+                            SelectionChanged="ListMovies_SelectionChanged"
+                            EmptyView="Empty list so far :("
+                            Grid.ColumnSpan="2">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"/>
+                    </CollectionView.ItemsLayout>
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="viewmodels:Saved_Movie">
                             <Grid Padding="10">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
@@ -46,15 +98,9 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </RefreshView>
-            <Label Text="Bad Movie List" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="Body"/>
-            <ListView x:Name="ListBadMovies" ItemTapped="ShowBadMovies">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ImageCell x:Name="ImageCellBadProfilePage" Text="{Binding title}" Detail="{Binding vote_average}"  ImageSource="{Binding poster_path}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-                <Button x:Name="ButtonShowAllMovies"  Text="Show Full List of movies" Clicked="ShowAllMovies"/>
+            <Button x:Name="ButtonShowAllMovies"
+                    Text="Show Full List of movies" 
+                    Clicked="ShowAllMovies"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

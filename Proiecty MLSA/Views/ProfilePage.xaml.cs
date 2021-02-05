@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,6 +13,7 @@ namespace Proiecty_MLSA.Views
     {
         public List<Saved_Movie> GoodMovies { get; set; }
         public List<Saved_Movie> BadMovies { get; set; }
+
         public ProfilePage()
         {
             InitializeComponent();
@@ -21,24 +23,28 @@ namespace Proiecty_MLSA.Views
 
             BadMovies = User.getInstance().BadMovies;
             ListBadMovies.ItemsSource = BadMovies;
+            
+            ICommand refreshCommand = new Command(() =>
+            {
+                RefreshGood.IsRefreshing = false;
+                RefreshBad.IsRefreshing = false;
+            });
+            RefreshGood.Command = refreshCommand;
+            RefreshBad.Command = refreshCommand;
+
         }
         public async void ShowAllMovies(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
         }
-        public async void ShowBadMovies(object sender, ItemTappedEventArgs e)
-        {
-            await Navigation.PushAsync(new MoviePage(BadMovies[e.ItemIndex]));
-        }
 
-        private async void ListGoodMovies_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private async void ListMovies_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Console.Out.WriteLine("De ce nu mergi?");
             var SavedMovieInstance = e.CurrentSelection.FirstOrDefault() as Saved_Movie;
             
             if (SavedMovieInstance == null)
                 return;
-            Console.Out.WriteLine("De ce nu mergi?");
+
             await Navigation.PushAsync(new MoviePage(SavedMovieInstance));
 
             ((CollectionView)sender).SelectedItem = null;

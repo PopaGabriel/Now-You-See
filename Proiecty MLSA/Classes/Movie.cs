@@ -106,6 +106,8 @@ namespace Proiecty_MLSA.Classes
         }
         public Saved_Movie(double savedRating, Movie movie)
         {
+            title = movie.title;
+            vote_average = movie.vote_average;
             poster_path = movie.poster_path;
             popularity = movie.popularity;
             runtime = movie.runtime;

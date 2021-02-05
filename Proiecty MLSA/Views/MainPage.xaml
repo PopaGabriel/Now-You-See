@@ -1,12 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              x:Class="Proiecty_MLSA.MainPage"
              xmlns:viewmodels="clr-namespace:Proiecty_MLSA.Classes"
              x:DataType="viewmodels:Saved_Movie"
-             xmlns:models="clr-namespace:Proiecty_MLSA.Classes"
-             >
+             xmlns:models="clr-namespace:Proiecty_MLSA.Classes">
     
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" 
@@ -39,18 +37,41 @@
                    HorizontalTextAlignment="Center"
                    FontSize="16"/>
         </Frame>
-        <ListView x:Name="ListViewMainPage" 
-                  ItemTapped="LetMeSeeTheMovie">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="models:Saved_Movie">
-                    <ImageCell x:Name="ImageCellMainPage"
-                               Text="{Binding title}"
-                               ImageSource="{Binding poster_path}"
-                               Detail="{Binding vote_average}"
-                               DetailColor="AliceBlue"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <RefreshView x:Name="RefreshMain"
+                     RefreshColor="HotPink">
+            <CollectionView x:Name="ÇollectionViewMainPage" 
+                        SelectionMode="Single"
+                        SelectionChanged="CollectionViewMainPage_SelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="viewmodels:Saved_Movie">
+                        <Grid x:Name="GridMain?" 
+                              Padding="10"
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="2"
+                                        Source="{Binding poster_path}"
+                                        Aspect="AspectFill"
+                                        HeightRequest="60"
+                                        WidthRequest="60" />
+                            <Label Grid.Column="1"
+                                       Text="{Binding title}"
+                                       FontAttributes="Bold" />
+                            <Label Grid.Row="1"
+                                       Grid.Column="1"
+                                       Text="{Binding vote_average}"
+                                       FontAttributes="Italic"
+                                       VerticalOptions="End" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
     </StackLayout>
     
 </ContentPage>

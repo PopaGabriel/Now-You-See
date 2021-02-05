@@ -32,7 +32,10 @@ namespace Proiecty_MLSA {
         private global::Xamarin.Forms.Label LabelInsideTheHotReleasesFrame;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
-        private global::Xamarin.Forms.ListView ListViewMainPage;
+        private global::Xamarin.Forms.RefreshView RefreshMain;
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
+        private global::Xamarin.Forms.CollectionView ÇollectionViewMainPage;
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
@@ -42,7 +45,8 @@ namespace Proiecty_MLSA {
             Image_Search = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ImageButton>(this, "Image_Search");
             FrameHotNewReleases = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Frame>(this, "FrameHotNewReleases");
             LabelInsideTheHotReleasesFrame = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.Label>(this, "LabelInsideTheHotReleasesFrame");
-            ListViewMainPage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.ListView>(this, "ListViewMainPage");
+            RefreshMain = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.RefreshView>(this, "RefreshMain");
+            ÇollectionViewMainPage = global::Xamarin.Forms.NameScopeExtensions.FindByName<global::Xamarin.Forms.CollectionView>(this, "ÇollectionViewMainPage");
         }
     }
 }
