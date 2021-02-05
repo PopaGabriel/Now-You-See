@@ -5,13 +5,47 @@
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand">
             <Label Text="Good Movie List" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="Body"/>
-            <ListView x:Name="ListGoodMovies" ItemTapped="ShowGoodMovies">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ImageCell x:Name="ImageCellBadProfilePage" Text="{Binding title}" Detail="{Binding vote_average}"  ImageSource="{Binding poster_path}"/>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+            <RefreshView RefreshColor="Aqua"
+                         HorizontalOptions="CenterAndExpand">
+                <CollectionView x:Name="ListGoodMovies" 
+                            SelectionMode="Single"
+                            SelectionChanged="ListGoodMovies_SelectionChanged"
+                            ItemsSource = "{Binding GoodMovies}"
+                            EmptyView="Empty list so far :("
+                            Grid.ColumnSpan="2">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"/>
+                    </CollectionView.ItemsLayout>
+                    
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.RowSpan="2"
+                                        Source="{Binding poster_path}"
+                                        Aspect="AspectFill"
+                                        HeightRequest="60"
+                                        WidthRequest="60" />
+                                <Label Grid.Column="1"
+                                       Text="{Binding title}"
+                                       FontAttributes="Bold" />
+                                <Label Grid.Row="1"
+                                       Grid.Column="1"
+                                       Text="{Binding vote_average}"
+                                       FontAttributes="Italic"
+                                       VerticalOptions="End" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
             <Label Text="Bad Movie List" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontSize="Body"/>
             <ListView x:Name="ListBadMovies" ItemTapped="ShowBadMovies">
                 <ListView.ItemTemplate>
@@ -20,7 +54,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button x:Name="ButtonShowAllMovies"  Text="Show Full List of movies" Clicked="ShowAllMovies"/>
+                <Button x:Name="ButtonShowAllMovies"  Text="Show Full List of movies" Clicked="ShowAllMovies"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -737,11 +737,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Catalin\\Desktop\\Mlsa4\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj",
+      "projectUniqueName": "C:\\Users\\Catalin\\Desktop\\Mlsa2\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj",
       "projectName": "Proiecty MLSA",
-      "projectPath": "C:\\Users\\Catalin\\Desktop\\Mlsa4\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj",
+      "projectPath": "C:\\Users\\Catalin\\Desktop\\Mlsa2\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj",
       "packagesPath": "C:\\Users\\Catalin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Catalin\\Desktop\\Mlsa4\\Now-You-See\\Proiecty MLSA\\obj\\",
+      "outputPath": "C:\\Users\\Catalin\\Desktop\\Mlsa2\\Now-You-See\\Proiecty MLSA\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

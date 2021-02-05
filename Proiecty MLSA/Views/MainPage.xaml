@@ -1,17 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             x:Class="Proiecty_MLSA.MainPage">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             x:Class="Proiecty_MLSA.MainPage"
+             xmlns:viewmodels="clr-namespace:Proiecty_MLSA.Classes"
+             x:DataType="viewmodels:Saved_Movie"
+             xmlns:models="clr-namespace:Proiecty_MLSA.Classes"
+             >
     
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" Padding="0,0,100,0" Spacing="0">
+        <StackLayout Orientation="Horizontal" 
+                     Padding="0,0,100,0" 
+                     Spacing="10">
             <Button x:Name="ProfileButton" 
                     Text="Profile"  
                     Clicked="GoToProfilePage"/>
             <SearchBar x:Name="NavigationBar"
                        Placeholder="Search........"
-                       
-                       />
+                       FontSize="16"/>
         </StackLayout>
     </NavigationPage.TitleView>
     <StackLayout Spacing="10">
@@ -23,7 +29,7 @@
                      Source="bed_double_fill.jpg"            
                      BorderColor="#8FFBE1"        
                      HorizontalOptions="Center"
-        Clicked="Recomanda">
+                     Clicked="Recomanda">
         </ImageButton>
         <Frame x:Name="FrameHotNewReleases" 
                Padding="24" 
@@ -33,15 +39,15 @@
                    HorizontalTextAlignment="Center"
                    FontSize="16"/>
         </Frame>
-        <ListView x:Name="ListViewMainPage" ItemTapped="LetMeSeeTheMovie">
+        <ListView x:Name="ListViewMainPage" 
+                  ItemTapped="LetMeSeeTheMovie">
             <ListView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="models:Saved_Movie">
                     <ImageCell x:Name="ImageCellMainPage"
                                Text="{Binding title}"
                                ImageSource="{Binding poster_path}"
                                Detail="{Binding vote_average}"
-                               DetailColor="AliceBlue"
-                               />
+                               DetailColor="AliceBlue"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

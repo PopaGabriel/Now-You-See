@@ -14,19 +14,25 @@ namespace Proiecty_MLSA
         public MainPage()
         {
             InitializeComponent();
-            Xamarin.Forms.Color BarBackgroundColor = ColorPallet.TextColorInfo;
+            InitializeComponentColors();
+            Task.Run(() => makePopularMovies());
+
+        }
+        private void InitializeComponentColors()
+        {
+            NavigationBar.CancelButtonColor = ColorPallet.BackgroundMain;
+            NavigationBar.TextColor = ColorPallet.BackgroundMain;
 
             ProfileButton.TextColor = ColorPallet.TextColorButtons;
             ProfileButton.BackgroundColor = ColorPallet.BackgroundButton;
 
             BackgroundColor = ColorPallet.BackgroundMain;
+
             Image_Search.BackgroundColor = ColorPallet.BackgroundMain;
+            NavigationBar.BackgroundColor = ColorPallet.BackgroundButton;
 
             FrameHotNewReleases.BackgroundColor = ColorPallet.BackgroundLabel;
             LabelInsideTheHotReleasesFrame.TextColor = ColorPallet.TextColorInfo;
-            
-            Task.Run(() => makePopularMovies());
-
         }
         public void makePopularMovies()
         {

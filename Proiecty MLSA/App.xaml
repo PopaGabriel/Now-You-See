@@ -2,9 +2,4 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proiecty_MLSA.App">
-    <Application.Resources>
-        <Style TargetType="NavigationPage">
-            <Setter Property="BarBackgroundColor" Value="#ff5300"/>
-        </Style>
-    </Application.Resources>
 </Application>
