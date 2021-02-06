@@ -4,25 +4,38 @@
              x:Class="Proiecty_MLSA.Views.MoviePage">
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout x:Name="MovieStack" Orientation="Vertical" Spacing="0">
-                <Frame Padding="50" Margin="0" BackgroundColor="#264653">
-                    <StackLayout>
-                        <Image Source="{Binding poster_path}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
-                        <Label Text="{Binding title}" HorizontalOptions="CenterAndExpand" FontSize="20"/>
-                        <StackLayout Grid.Row="1" Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                            <Label x:Name="lbCo" Text="Mark"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                            <Label x:Name="lbcopywrite" Text="{Binding vote_average}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-                            <Label x:Name="lbDescription" Text="{Binding overview}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <StackLayout x:Name="MovieStack" Orientation="Vertical" Spacing="0">
+                    <Frame Padding="50" Margin="0" BackgroundColor="#264653">
+                        <StackLayout>
+                            <Image Source="{Binding poster_path}" Aspect="AspectFill" />
+                            <Label Text="{Binding title}" FontSize="20"/>
+                            <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+                            <Label x:Name="MarkLabel" FontSize="Body">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Mark:    " />
+                                        <Span Text="{Binding vote_average}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label x:Name="OverviewLabel" FontSize="Body">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Overview:    "/>
+                                        <Span Text="{Binding overview}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
                         </StackLayout>
-                    </StackLayout>
-                </Frame>
-                <StackLayout>
-                <Grid x:Name="Buttons" ColumnDefinitions="50*, 50*" ColumnSpacing="0" HorizontalOptions="FillAndExpand"  >
-                    <Button Text="Add Movie" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="AddToUserList" Grid.Column="0" BackgroundColor="ForestGreen"/>
-                    <Button Text="Remove Movie" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="RemoveFromUserList" Grid.Column="1" BackgroundColor="DarkRed"/>
-                </Grid>
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout>
+                    <Grid x:Name="Buttons" ColumnDefinitions="50*, 50*" ColumnSpacing="0" HorizontalOptions="FillAndExpand"  >
+                        <Button Text="Add Movie" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="AddToUserList" Grid.Column="0" BackgroundColor="ForestGreen"/>
+                        <Button Text="Remove Movie" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="RemoveFromUserList" Grid.Column="1" BackgroundColor="DarkRed"/>
+                    </Grid>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
-    </ScrollView>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

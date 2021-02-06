@@ -118,4 +118,14 @@ namespace Proiecty_MLSA.Classes
             this.savedRating = savedRating;
         }
     }
+    public class MovieItemViewModel
+    {
+        private Saved_Movie movie;
+
+        public MovieItemViewModel(Saved_Movie receivedMovie)
+        {
+            movie = receivedMovie;
+            //AddToCartCommand = new Xamarin.Forms.Command(AddToCart);
+        }
+    }
 }

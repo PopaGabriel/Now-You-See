@@ -30,18 +30,16 @@ namespace Proiecty_MLSA
         private void InitializeComponentColors()
         {
             
-            NavigationBar.CancelButtonColor = ColorPallet.BackgroundMain;
-            NavigationBar.TextColor = ColorPallet.BackgroundMain;
-
-            ProfileButton.TextColor = ColorPallet.TextColorButtons;
+            NavigationBar.CancelButtonColor = ColorPallet.TextColorInfo;
+            NavigationBar.TextColor = ColorPallet.TextColorInfo;
+            NavigationBar.PlaceholderColor = ColorPallet.TextColorInfo;
+            ProfileButton.TextColor = ColorPallet.TextColorInfo;
             ProfileButton.BackgroundColor = ColorPallet.BackgroundButton;
-            
             BackgroundColor = ColorPallet.BackgroundMain;
-
             Image_Search.BackgroundColor = ColorPallet.BackgroundMain;
             NavigationBar.BackgroundColor = ColorPallet.BackgroundButton;
-
-            FrameHotNewReleases.BackgroundColor = ColorPallet.BackgroundLabel;
+            ÇollectionViewMainPage.BackgroundColor = ColorPallet.BackgroundButton;
+            LabelInsideTheHotReleasesFrame.BackgroundColor = ColorPallet.BackgroundMain;
             LabelInsideTheHotReleasesFrame.TextColor = ColorPallet.TextColorInfo;
         }
         public void makePopularMovies()

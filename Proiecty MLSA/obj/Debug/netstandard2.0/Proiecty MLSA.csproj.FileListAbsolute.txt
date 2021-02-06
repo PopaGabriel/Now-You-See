@@ -78,3 +78,4 @@ C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.
 C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Proiecty MLSA.dll
 C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\ref\Proiecty MLSA.dll
 C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Proiecty MLSA.pdb
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Views\MovieItemViewCell.xaml.g.cs

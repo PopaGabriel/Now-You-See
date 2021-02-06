@@ -8,12 +8,12 @@
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" 
                      VerticalOptions="CenterAndExpand">
-            <Label Text="Good Movie List" 
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand" 
-                   FontSize="Body"/>
+            <Label x:Name="LabelGood"
+                   Text="Good Movie List" 
+                   FontSize="Body"
+                   HorizontalOptions="CenterAndExpand" />
             <RefreshView x:Name="RefreshGood"
-                         RefreshColor="Aqua"
+                         RefreshColor="HotPink"
                          HorizontalOptions="CenterAndExpand">
                 <CollectionView x:Name="ListGoodMovies" 
                             SelectionMode="Single"
@@ -21,12 +21,14 @@
                             EmptyView="Empty list so far :("
                             Grid.ColumnSpan="2">
                     <CollectionView.ItemsLayout>
-                        <LinearItemsLayout Orientation="Vertical"/>
+                        <LinearItemsLayout ItemSpacing="10"  Orientation="Vertical"/>
                     </CollectionView.ItemsLayout>
                     
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="viewmodels:Saved_Movie">
-                            <Grid x:Name="GridMain" Padding="10">
+                            <Grid x:Name="GridMain" 
+                                  Padding="10"
+                                  BackgroundColor="LightBlue">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
@@ -53,10 +55,10 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </RefreshView>
-            <Label Text="Bad Movie List" 
-                   VerticalOptions="CenterAndExpand" 
-                   HorizontalOptions="CenterAndExpand" 
-                   FontSize="Body"/>
+            <Label x:Name="LabelBad"
+                   Text="Bad Movie List"
+                   FontSize="Body"
+                   HorizontalOptions="CenterAndExpand" />
             <RefreshView x:Name="RefreshBad"
                          RefreshColor="HotPink"
                          HorizontalOptions="CenterAndExpand">
@@ -66,12 +68,13 @@
                             EmptyView="Empty list so far :("
                             Grid.ColumnSpan="2">
                     <CollectionView.ItemsLayout>
-                        <LinearItemsLayout Orientation="Vertical"/>
+                        <LinearItemsLayout ItemSpacing="10"  Orientation="Vertical"/>
                     </CollectionView.ItemsLayout>
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="viewmodels:Saved_Movie">
-                            <Grid Padding="10">
+                            <Grid Padding="10"
+                                  BackgroundColor="LightBlue">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />

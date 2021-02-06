@@ -1,4 +1,5 @@
 ﻿using Proiecty_MLSA.Classes;
+using Proiecty_MLSA.Static_Values;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,6 +18,8 @@ namespace Proiecty_MLSA.Views
         public ProfilePage()
         {
             InitializeComponent();
+            setColors();
+
             GoodMovies = User.getInstance().GoodMovies;
             Console.Out.WriteLine(GoodMovies.Count);
             ListGoodMovies.ItemsSource = GoodMovies;
@@ -31,9 +34,16 @@ namespace Proiecty_MLSA.Views
             });
             RefreshGood.Command = refreshCommand;
             RefreshBad.Command = refreshCommand;
-
         }
-        public async void ShowAllMovies(object sender, EventArgs e)
+        private void setColors()
+        {
+            BackgroundColor = ColorPallet.BackgroundMain;
+            ListGoodMovies.BackgroundColor = ColorPallet.BackgroundButton;
+            ListBadMovies.BackgroundColor = ColorPallet.BackgroundButton;
+            LabelBad.TextColor = ColorPallet.TextColorInfo;
+            LabelGood.TextColor = ColorPallet.TextColorInfo;
+        }
+        private async void ShowAllMovies(object sender, EventArgs e)
         {
             await Navigation.PopAsync();
         }

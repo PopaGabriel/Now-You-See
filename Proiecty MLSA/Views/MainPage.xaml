@@ -29,23 +29,23 @@
                      HorizontalOptions="Center"
                      Clicked="Recomanda">
         </ImageButton>
-        <Frame x:Name="FrameHotNewReleases" 
-               Padding="24" 
-               CornerRadius="0">
-            <Label x:Name="LabelInsideTheHotReleasesFrame" 
+        <Label x:Name="LabelInsideTheHotReleasesFrame" 
                    Text="Fresh New Releases"
                    HorizontalTextAlignment="Center"
                    FontSize="16"/>
-        </Frame>
         <RefreshView x:Name="RefreshMain"
                      RefreshColor="HotPink">
             <CollectionView x:Name="ÇollectionViewMainPage" 
                         SelectionMode="Single"
-                        SelectionChanged="CollectionViewMainPage_SelectionChanged">
+                        SelectionChanged="CollectionViewMainPage_SelectionChanged" >
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
+                </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="viewmodels:Saved_Movie">
                         <Grid x:Name="GridMain?" 
                               Padding="10"
+                              BackgroundColor="LightBlue">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto" />
                                 <RowDefinition Height="Auto" />
