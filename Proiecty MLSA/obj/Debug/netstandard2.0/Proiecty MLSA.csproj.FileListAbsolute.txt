@@ -79,3 +79,21 @@ C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.
 C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\ref\Proiecty MLSA.dll
 C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Proiecty MLSA.pdb
 C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Views\MovieItemViewCell.xaml.g.cs
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\bin\Debug\netstandard2.0\Proiecty MLSA.deps.json
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\bin\Debug\netstandard2.0\Proiecty MLSA.dll
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\bin\Debug\netstandard2.0\ref\Proiecty MLSA.dll
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\bin\Debug\netstandard2.0\Proiecty MLSA.pdb
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Views\MovieItemViewCell.xaml.g.cs
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Views\MoviePage.xaml.g.cs
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Views\ProfilePage.xaml.g.cs
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Proiecty MLSA.AssemblyInfoInputs.cache
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Proiecty MLSA.AssemblyInfo.cs
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Proiecty MLSA.csproj.CoreCompileInputs.cache
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Proiecty MLSA.dll
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\ref\Proiecty MLSA.dll
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Proiecty MLSA.pdb
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Proiecty MLSA.csprojAssemblyReference.cache
+C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Views\Page1.xaml.g.cs

@@ -45,9 +45,9 @@ namespace Proiecty_MLSA.Static_Values
                 {
                     List<Saved_Movie> listMovies = new List<Saved_Movie>();
                     Root root = await message.Content.ReadAsAsync<Root>();
-                    
+
                     for (int i = 0; i < root.results.Count; i++)
-                        listMovies.Add(new Saved_Movie(-1 ,await ApiHelper.getInstance().GetMovie(root.results[i].id)));
+                        listMovies.Add(new Saved_Movie(-1, await ApiHelper.getInstance().GetMovie(root.results[i].id)));
 
                     return listMovies;
                 }

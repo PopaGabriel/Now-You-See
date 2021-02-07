@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tQ/9xRDho6w8D+eIyx9pMt6/i5s7fntB7XvtMLqvGff9AY7iqf3vEGVyiE9HutEn+7Pzc0m0d/m9DKm+nnnizQ==",
+  "dgSpecHash": "/gH7HrsbtnOXRj4twwI6n1kX3hSKdofvMJF8WN3WSvWgmH9MoaaNfJqeXXmAnOd1w1UdetEpaEbM8PddT444Rw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\Mlsa2\\Now-You-See\\Proiecty MLSA.Android\\Proiecty MLSA.Android.csproj",
+  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\GitIgnore\\Now-You-See\\Proiecty MLSA.Android\\Proiecty MLSA.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Catalin\\.nuget\\packages\\chessie\\0.6.0\\chessie.0.6.0.nupkg.sha512",
     "C:\\Users\\Catalin\\.nuget\\packages\\fsharp.core\\4.0.1.7-alpha\\fsharp.core.4.0.1.7-alpha.nupkg.sha512",
@@ -72,26 +72,5 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Xamarin.Essentials from 1.6.1 to 1.5.3.2. Reference the package directly from the project to select a different version. \r\n Proiecty MLSA.Android -> Proiecty MLSA -> Xamarin.Essentials (>= 1.6.1) \r\n Proiecty MLSA.Android -> Xamarin.Essentials (>= 1.5.3.2)",
-      "libraryId": "Xamarin.Essentials",
-      "targetGraphs": [
-        "MonoAndroid,Version=v9.0"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.1931 to 4.8.0.1451. Reference the package directly from the project to select a different version. \r\n Proiecty MLSA.Android -> Proiecty MLSA -> Xamarin.Forms (>= 5.0.0.1931) \r\n Proiecty MLSA.Android -> Xamarin.Forms (>= 4.8.0.1451)",
-      "libraryId": "Xamarin.Forms",
-      "targetGraphs": [
-        "MonoAndroid,Version=v9.0"
-      ]
-    }
-  ]
+  "logs": []
 }

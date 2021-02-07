@@ -1,7 +1,5 @@
-﻿using Newtonsoft.Json;
-using Proiecty_MLSA.Classes;
+﻿using Proiecty_MLSA.Classes;
 using Proiecty_MLSA.Static_Values;
-using System.IO;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 

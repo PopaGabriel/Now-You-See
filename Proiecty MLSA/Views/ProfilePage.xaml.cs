@@ -25,7 +25,7 @@ namespace Proiecty_MLSA.Views
 
             BadMovies = User.getInstance().BadMovies;
             ListBadMovies.ItemsSource = BadMovies;
-            
+
             ICommand refreshCommand = new Command(() =>
             {
                 RefreshGood.IsRefreshing = false;
@@ -50,7 +50,7 @@ namespace Proiecty_MLSA.Views
         private async void ListMovies_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var SavedMovieInstance = e.CurrentSelection.FirstOrDefault() as Saved_Movie;
-            
+
             if (SavedMovieInstance == null)
                 return;
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FI6eEqchmMuYvkQyF2TTuxk+3gEuH2z+FqqDk4nJUniLLRQtzR/pUZy4ulPHH6jnVQaMHvx3YDS/bqIuGn0+Eg==",
+  "dgSpecHash": "8UEtnChpdYEDouIz9LbDBvGe3ahzetp9MXpE7UYDm8HVG4efO0oITrPyNmkIbIKbTlRUQw2RAWXfkbPu7FETHQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\Mlsa2\\Now-You-See\\Proiecty MLSA.iOS\\Proiecty MLSA.iOS.csproj",
+  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\GitIgnore\\Now-You-See\\Proiecty MLSA.iOS\\Proiecty MLSA.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Catalin\\.nuget\\packages\\chessie\\0.6.0\\chessie.0.6.0.nupkg.sha512",
     "C:\\Users\\Catalin\\.nuget\\packages\\fsharp.core\\4.0.1.7-alpha\\fsharp.core.4.0.1.7-alpha.nupkg.sha512",
@@ -36,32 +36,5 @@
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Xamarin.Essentials from 1.6.1 to 1.5.3.2. Reference the package directly from the project to select a different version. \r\n Proiecty MLSA.iOS -> Proiecty MLSA -> Xamarin.Essentials (>= 1.6.1) \r\n Proiecty MLSA.iOS -> Xamarin.Essentials (>= 1.5.3.2)",
-      "libraryId": "Xamarin.Essentials",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    },
-    {
-      "code": "NU1605",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Detected package downgrade: Xamarin.Forms from 5.0.0.1931 to 4.8.0.1451. Reference the package directly from the project to select a different version. \r\n Proiecty MLSA.iOS -> Proiecty MLSA -> Xamarin.Forms (>= 5.0.0.1931) \r\n Proiecty MLSA.iOS -> Xamarin.Forms (>= 4.8.0.1451)",
-      "libraryId": "Xamarin.Forms",
-      "targetGraphs": [
-        "Xamarin.iOS,Version=v1.0",
-        "Xamarin.iOS,Version=v1.0/win",
-        "Xamarin.iOS,Version=v1.0/win-x64",
-        "Xamarin.iOS,Version=v1.0/win-x86"
-      ]
-    }
-  ]
+  "logs": []
 }

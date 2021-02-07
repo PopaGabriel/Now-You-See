@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vXsySONhw63iEjdAdrR7XEwN1sBAj38SFuH+093h0nPmXVQfqp3ntQU+cjjUcox4NPmu1HJLUMQme1YRJRBKKA==",
+  "dgSpecHash": "MKFhsmG0zxIbAL9vif5WOOfpbeZMiMDAS4MZOEqbnkSf0T0R/cI1eoQGPmBqjo1f6QnR3a3WLGOyfYenzM1I+w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\Mlsa2\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj",
+  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\GitIgnore\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Catalin\\.nuget\\packages\\chessie\\0.6.0\\chessie.0.6.0.nupkg.sha512",
     "C:\\Users\\Catalin\\.nuget\\packages\\fsharp.core\\4.0.1.7-alpha\\fsharp.core.4.0.1.7-alpha.nupkg.sha512",
@@ -69,8 +69,8 @@
     "C:\\Users\\Catalin\\.nuget\\packages\\system.threading.tasks.parallel\\4.0.1\\system.threading.tasks.parallel.4.0.1.nupkg.sha512",
     "C:\\Users\\Catalin\\.nuget\\packages\\system.threading.thread\\4.0.0\\system.threading.thread.4.0.0.nupkg.sha512",
     "C:\\Users\\Catalin\\.nuget\\packages\\system.threading.threadpool\\4.0.10\\system.threading.threadpool.4.0.10.nupkg.sha512",
-    "C:\\Users\\Catalin\\.nuget\\packages\\xamarin.essentials\\1.6.1\\xamarin.essentials.1.6.1.nupkg.sha512",
-    "C:\\Users\\Catalin\\.nuget\\packages\\xamarin.forms\\5.0.0.1931\\xamarin.forms.5.0.0.1931.nupkg.sha512"
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.8.0.1451\\xamarin.forms.4.8.0.1451.nupkg.sha512"
   ],
   "logs": []
 }

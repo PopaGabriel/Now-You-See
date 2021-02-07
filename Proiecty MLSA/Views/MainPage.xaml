@@ -5,7 +5,7 @@
              xmlns:viewmodels="clr-namespace:Proiecty_MLSA.Classes"
              x:DataType="viewmodels:Saved_Movie"
              xmlns:models="clr-namespace:Proiecty_MLSA.Classes">
-    
+
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" 
                      Padding="0,0,100,0" 
@@ -20,8 +20,8 @@
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-    <StackLayout Spacing="10">
-        <ImageButton x:Name="Image_Search" 
+        <StackLayout Spacing="10">
+            <ImageButton x:Name="Image_Search" 
                      WidthRequest="250" 
                      HeightRequest="250" 
                      CornerRadius="250" 
@@ -30,50 +30,50 @@
                      BorderColor="#8FFBE1"        
                      HorizontalOptions="Center"
                      Clicked="Recomanda">
-        </ImageButton>
-        <Label x:Name="LabelInsideTheHotReleasesFrame" 
+            </ImageButton>
+            <Label x:Name="LabelInsideTheHotReleasesFrame" 
                    Text="Fresh New Releases"
                    HorizontalTextAlignment="Center"
                    FontSize="16"/>
-        <RefreshView x:Name="RefreshMain"
+            <RefreshView x:Name="RefreshMain"
                      RefreshColor="HotPink">
-            <CollectionView x:Name="ÇollectionViewMainPage" 
+                <CollectionView x:Name="ÇollectionViewMainPage" 
                         SelectionMode="Single"
                         SelectionChanged="CollectionViewMainPage_SelectionChanged" >
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
-                </CollectionView.ItemsLayout>
-                <CollectionView.ItemTemplate>
-                    <DataTemplate x:DataType="viewmodels:Saved_Movie">
-                        <Grid x:Name="GridMain?" 
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="viewmodels:Saved_Movie">
+                            <Grid x:Name="GridMain?" 
                               Padding="10"
                               BackgroundColor="LightBlue">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="Auto" />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition Width="Auto" />
-                            </Grid.ColumnDefinitions>
-                            <Image Grid.RowSpan="2"
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.RowSpan="2"
                                         Source="{Binding poster_path}"
                                         Aspect="AspectFill"
                                         HeightRequest="60"
                                         WidthRequest="60" />
-                            <Label Grid.Column="1"
+                                <Label Grid.Column="1"
                                        Text="{Binding title}"
                                        FontAttributes="Bold" />
-                            <Label Grid.Row="1"
+                                <Label Grid.Row="1"
                                        Grid.Column="1"
                                        Text="{Binding vote_average}"
                                        FontAttributes="Italic"
                                        VerticalOptions="End" />
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </RefreshView>
-    </StackLayout>
-   </ContentPage.Content>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

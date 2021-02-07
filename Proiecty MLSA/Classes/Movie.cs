@@ -1,5 +1,4 @@
-﻿using Proiecty_MLSA.Static_Values;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace Proiecty_MLSA.Classes
@@ -98,7 +97,7 @@ namespace Proiecty_MLSA.Classes
         public double savedRating { get; set; }
         public Saved_Movie()
         {
-            
+
         }
         public Saved_Movie(double savedRating, Movie movie)
         {

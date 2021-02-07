@@ -7,7 +7,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms.Internals;
 
 namespace Proiecty_MLSA.Classes
 {
@@ -32,8 +31,8 @@ namespace Proiecty_MLSA.Classes
     }
     public class InformationBuilder : IInformationBuilder
     {
-        public double AverageRating{set; get;}
-        public int age{set; get;}
+        public double AverageRating { set; get; }
+        public int age { set; get; }
 
         public String Name { set; get; }
 
@@ -99,11 +98,11 @@ namespace Proiecty_MLSA.Classes
         public double CalculateRating()
         {
             double sum = 0.0;
-            foreach(Saved_Movie movie in GoodMovies)
+            foreach (Saved_Movie movie in GoodMovies)
             {
                 sum += movie.savedRating;
             }
-            foreach(Saved_Movie movie in BadMovies)
+            foreach (Saved_Movie movie in BadMovies)
             {
                 sum += movie.savedRating;
             }

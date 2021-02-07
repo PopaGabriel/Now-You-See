@@ -1,5 +1,4 @@
-﻿using Paket;
-using Proiecty_MLSA.Classes;
+﻿using Proiecty_MLSA.Classes;
 using Proiecty_MLSA.Static_Values;
 using Proiecty_MLSA.Views;
 using System;
@@ -18,19 +17,19 @@ namespace Proiecty_MLSA
         {
             InitializeComponent();
             InitializeComponentColors();
-            
+
             Task.Run(() => makePopularMovies());
-            
+
             ICommand refreshCommand = new Command(() =>
             {
                 RefreshMain.IsRefreshing = false;
             });
             RefreshMain.Command = refreshCommand;
-            
+
         }
         private void InitializeComponentColors()
         {
-            
+
             NavigationBar.CancelButtonColor = ColorPallet.TextColorInfo;
             NavigationBar.TextColor = ColorPallet.TextColorInfo;
             NavigationBar.PlaceholderColor = ColorPallet.TextColorInfo;
@@ -58,7 +57,7 @@ namespace Proiecty_MLSA
         }
         private async void Recomanda(object sender, EventArgs e)
         {
-            
+
             Console.Out.WriteLine(User.getInstance() + "\nDE ce?");
 
             if (Device.RuntimePlatform == Device.Android)
