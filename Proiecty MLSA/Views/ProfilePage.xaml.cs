@@ -21,7 +21,6 @@ namespace Proiecty_MLSA.Views
             setColors();
 
             GoodMovies = User.getInstance().GoodMovies;
-            Console.Out.WriteLine(GoodMovies.Count);
             ListGoodMovies.ItemsSource = GoodMovies;
 
             BadMovies = User.getInstance().BadMovies;
@@ -58,6 +57,11 @@ namespace Proiecty_MLSA.Views
             await Navigation.PushAsync(new MoviePage(SavedMovieInstance));
 
             ((CollectionView)sender).SelectedItem = null;
+        }
+
+        private void ThemeButton_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

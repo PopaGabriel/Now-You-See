@@ -5,6 +5,12 @@
              x:DataType="viewmodels:Saved_Movie"
              xmlns:models="clr-namespace:Proiecty_MLSA"
              x:Class="Proiecty_MLSA.Views.ProfilePage">
+    <NavigationPage.TitleView>
+        <Button x:Name="ProfileButton"
+                HorizontalOptions="End"
+                Text="Theme"
+                Clicked="ThemeButton_Clicked"/>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" 
                      VerticalOptions="CenterAndExpand">

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proiecty_MLSA.Static_Values;
+using System;
 using System.Collections.Generic;
 
 namespace Proiecty_MLSA.Classes
@@ -50,7 +51,6 @@ namespace Proiecty_MLSA.Classes
     {
         public Movie()
         {
-            genres = new List<Genre>();
             genre_ids = new List<int>();
             production_companies = new List<ProductionCompany>();
             production_countries = new List<ProductionCountry>();
@@ -80,10 +80,6 @@ namespace Proiecty_MLSA.Classes
         public void fillGenres(List<int> list)
         {
             Genre genre;
-            if (genres == null)
-            {
-                genres = new List<Genre>();
-            }
             for (int i = 0; i < list.Count; i++)
             {
                 genre = new Genre();
@@ -109,23 +105,11 @@ namespace Proiecty_MLSA.Classes
             title = movie.title;
             vote_average = movie.vote_average;
             poster_path = movie.poster_path;
-            popularity = movie.popularity;
             runtime = movie.runtime;
             overview = movie.overview;
             id = movie.id;
             genres = movie.genres;
-            genre_ids = movie.genre_ids;
             this.savedRating = savedRating;
-        }
-    }
-    public class MovieItemViewModel
-    {
-        private Saved_Movie movie;
-
-        public MovieItemViewModel(Saved_Movie receivedMovie)
-        {
-            movie = receivedMovie;
-            //AddToCartCommand = new Xamarin.Forms.Command(AddToCart);
         }
     }
 }

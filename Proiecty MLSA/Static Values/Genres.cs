@@ -13,6 +13,14 @@ namespace Proiecty_MLSA.Static_Values
             genres = new List<Genre>();
             fillGenres();
         }
+        public Genre getGenre(int id)
+        {
+            foreach (Genre genre in genres)
+                if (genre.id == id)
+                    return genre;
+
+            return null;
+        }
         private async void fillGenres()
         {
             using (HttpResponseMessage message = await ApiHelper.getInstance().GetClient().GetAsync(ApiHelper.genresList))

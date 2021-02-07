@@ -18,6 +18,7 @@ namespace Proiecty_MLSA
         {
             InitializeComponent();
             InitializeComponentColors();
+            
             Task.Run(() => makePopularMovies());
             
             ICommand refreshCommand = new Command(() =>

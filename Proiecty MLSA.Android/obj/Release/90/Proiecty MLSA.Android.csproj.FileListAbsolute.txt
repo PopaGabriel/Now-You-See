@@ -1,0 +1,18 @@
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\MonoAndroid,Version=v9.0.AssemblyAttributes.cs
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\build.props
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\adb.props
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\Proiecty MLSA.Android.csprojAssemblyReference.cache
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\_VerifyXamarinAndroidSupportVersions.stamp
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\stamp\_BuildLibraryImportsCache.stamp
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\res.flag
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\lp\12\jl\files.cache
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\lp\13\jl\files.cache
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\lp\17\jl\files.cache
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\lp\19\jl\files.cache
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\lp\26\jl\files.cache
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\lp\30\jl\files.cache
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\lp\32\jl\files.cache
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\lp\33\jl\files.cache
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\lp\34\jl\files.cache
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\lp\38\jl\files.cache
+C:\Users\Catalin\Desktop\Mlsa2\Now-You-See\Proiecty MLSA.Android\obj\Release\90\lp\39\jl\files.cache

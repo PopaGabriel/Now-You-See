@@ -13,11 +13,13 @@
             <Button x:Name="ProfileButton" 
                     Text="Profile"  
                     Clicked="GoToProfilePage"/>
-            <SearchBar x:Name="NavigationBar"
+            <SearchBar x:Name="NavigationBar" 
+                       
                        Placeholder="Search........"
                        FontSize="16"/>
         </StackLayout>
     </NavigationPage.TitleView>
+    <ContentPage.Content>
     <StackLayout Spacing="10">
         <ImageButton x:Name="Image_Search" 
                      WidthRequest="250" 
@@ -73,5 +75,5 @@
             </CollectionView>
         </RefreshView>
     </StackLayout>
-    
+   </ContentPage.Content>
 </ContentPage>

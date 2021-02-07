@@ -4,21 +4,38 @@
              x:Class="Proiecty_MLSA.Views.MoviePage">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout x:Name="MovieStack" Orientation="Vertical" Spacing="0">
-                    <Frame Padding="50" Margin="0" BackgroundColor="#264653">
+            <StackLayout x:Name="MovieStack" 
+                         Orientation="Vertical"
+                         Spacing="10">
+                    <Frame x:Name="FrameStack" 
+                           Padding="25"
+                           Margin="0">
                         <StackLayout>
                             <Image Source="{Binding poster_path}" Aspect="AspectFill" />
-                            <Label Text="{Binding title}" FontSize="20"/>
-                            <StackLayout Grid.Row="1" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
-                            <Label x:Name="MarkLabel" FontSize="Body">
+                            <Label x:Name="NameLabel"
+                                   Text="{Binding title}"   
+                                   FontSize="20"/>
+                        <StackLayout Orientation="Vertical">
+                            <Label x:Name="MarkLabel"
+                                   FontSize="Body">
                                 <Label.FormattedText>
                                     <FormattedString>
-                                        <Span Text="Mark:    " />
+                                        <Span Text="TMDB Mark:    " />
                                         <Span Text="{Binding vote_average}"/>
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-                            <Label x:Name="OverviewLabel" FontSize="Body">
+                            <Label x:Name="YourMarkLabel"
+                                   FontSize="Body">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Your Mark:    " />
+                                        <Span Text="{Binding savedRating}"/>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label x:Name="OverviewLabel"
+                                   FontSize="Body">
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Text="Overview:    "/>
@@ -26,8 +43,24 @@
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
+                            <ScrollView>
+                                <ListView x:Name="Carousel"
+                                      CachingStrategy="RecycleElement"
+                                      ItemsSource="{Binding genres}"
+                                      HeightRequest="100">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <Label Text="{Binding name}"  
+                                                   FontSize="Body"
+                                                   HorizontalOptions="Center"/>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </ScrollView>
                         </StackLayout>
-                        </StackLayout>
+                    </StackLayout>
                     </Frame>
                     <StackLayout>
                     <Grid x:Name="Buttons" ColumnDefinitions="50*, 50*" ColumnSpacing="0" HorizontalOptions="FillAndExpand"  >
