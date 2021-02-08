@@ -2,30 +2,38 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:Proiecty_MLSA.Classes"
+             xmlns:local="clr-namespace:Proiecty_MLSA.Static_Values"
              x:DataType="viewmodels:Saved_Movie"
              xmlns:models="clr-namespace:Proiecty_MLSA"
-             x:Class="Proiecty_MLSA.Views.ProfilePage">
+             x:Class="Proiecty_MLSA.Views.ProfilePage"
+             BackgroundColor="{x:Static local:ColorPallet.BackgroundMain}">
     <NavigationPage.TitleView>
         <Button x:Name="ProfileButton"
                 HorizontalOptions="End"
                 Text="Theme"
                 Clicked="ThemeButton_Clicked"/>
     </NavigationPage.TitleView>
+    <ContentPage.Resources>
+        
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" 
                      VerticalOptions="CenterAndExpand">
             <Label x:Name="LabelGood"
+                   BackgroundColor="{x:Static local:ColorPallet.BackgroundMain}"
+                   TextColor="{x:Static local:ColorPallet.TextColorInfo}"
                    Text="Good Movie List" 
                    FontSize="Body"
                    HorizontalOptions="CenterAndExpand" />
             <RefreshView x:Name="RefreshGood"
-                         RefreshColor="HotPink"
+                         RefreshColor="{x:Static local:ColorPallet.RefreshColor}"
                          HorizontalOptions="CenterAndExpand">
                 <CollectionView x:Name="ListGoodMovies" 
-                            SelectionMode="Single"
-                            SelectionChanged="ListMovies_SelectionChanged"
-                            EmptyView="Empty list so far :("
-                            Grid.ColumnSpan="2">
+                                BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}"
+                                SelectionMode="Single"
+                                SelectionChanged="ListMovies_SelectionChanged"
+                                EmptyView="Empty list so far :("
+                                Grid.ColumnSpan="2">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout ItemSpacing="10"  Orientation="Vertical"/>
                     </CollectionView.ItemsLayout>
@@ -34,7 +42,7 @@
                         <DataTemplate x:DataType="viewmodels:Saved_Movie">
                             <Grid x:Name="GridMain" 
                                   Padding="10"
-                                  BackgroundColor="LightBlue">
+                                  BackgroundColor="{x:Static local:ColorPallet.BackgroundCollectionItems}">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
@@ -66,21 +74,23 @@
                    FontSize="Body"
                    HorizontalOptions="CenterAndExpand" />
             <RefreshView x:Name="RefreshBad"
-                         RefreshColor="HotPink"
+                         RefreshColor="{x:Static local:ColorPallet.RefreshColor}"
                          HorizontalOptions="CenterAndExpand">
                 <CollectionView x:Name="ListBadMovies" 
-                            SelectionMode="Single"
-                            SelectionChanged="ListMovies_SelectionChanged"
-                            EmptyView="Empty list so far :("
-                            Grid.ColumnSpan="2">
+                                SelectionMode="Single"
+                                BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}"
+                                SelectionChanged="ListMovies_SelectionChanged"
+                                EmptyView="Empty list so far :("
+                                Grid.ColumnSpan="2">
                     <CollectionView.ItemsLayout>
-                        <LinearItemsLayout ItemSpacing="10"  Orientation="Vertical"/>
+                        <LinearItemsLayout ItemSpacing="10"  
+                                           Orientation="Vertical"/>
                     </CollectionView.ItemsLayout>
 
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="viewmodels:Saved_Movie">
                             <Grid Padding="10"
-                                  BackgroundColor="LightBlue">
+                                  BackgroundColor="{x:Static local:ColorPallet.BackgroundCollectionItems}">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />
@@ -107,9 +117,6 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </RefreshView>
-            <Button x:Name="ButtonShowAllMovies"
-                    Text="Show Full List of movies" 
-                    Clicked="ShowAllMovies"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

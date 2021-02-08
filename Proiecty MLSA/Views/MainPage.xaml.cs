@@ -15,10 +15,9 @@ namespace Proiecty_MLSA
         private List<Saved_Movie> NewMovies { set; get; }
         public MainPage()
         {
-            InitializeComponent();
-            InitializeComponentColors();
-
             Task.Run(() => makePopularMovies());
+
+            InitializeComponent();
 
             ICommand refreshCommand = new Command(() =>
             {
@@ -26,21 +25,6 @@ namespace Proiecty_MLSA
             });
             RefreshMain.Command = refreshCommand;
 
-        }
-        private void InitializeComponentColors()
-        {
-
-            NavigationBar.CancelButtonColor = ColorPallet.TextColorInfo;
-            NavigationBar.TextColor = ColorPallet.TextColorInfo;
-            NavigationBar.PlaceholderColor = ColorPallet.TextColorInfo;
-            ProfileButton.TextColor = ColorPallet.TextColorInfo;
-            ProfileButton.BackgroundColor = ColorPallet.BackgroundButton;
-            BackgroundColor = ColorPallet.BackgroundMain;
-            Image_Search.BackgroundColor = ColorPallet.BackgroundMain;
-            NavigationBar.BackgroundColor = ColorPallet.BackgroundButton;
-            ÇollectionViewMainPage.BackgroundColor = ColorPallet.BackgroundButton;
-            LabelInsideTheHotReleasesFrame.BackgroundColor = ColorPallet.BackgroundMain;
-            LabelInsideTheHotReleasesFrame.TextColor = ColorPallet.TextColorInfo;
         }
         public void makePopularMovies()
         {
@@ -71,6 +55,7 @@ namespace Proiecty_MLSA
         private async void CollectionViewMainPage_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var SelectedMovie = e.CurrentSelection.FirstOrDefault() as Saved_Movie;
+
             if (SelectedMovie == null)
                 return;
 

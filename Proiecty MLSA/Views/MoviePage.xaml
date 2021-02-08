@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Proiecty_MLSA.Views.MoviePage">
+             xmlns:local="clr-namespace:Proiecty_MLSA.Static_Values"
+             x:Class="Proiecty_MLSA.Views.MoviePage"
+             BackgroundColor="{x:Static local:ColorPallet.BackgroundMain}">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout x:Name="MovieStack" 
@@ -9,14 +11,19 @@
                          Spacing="10">
                     <Frame x:Name="FrameStack" 
                            Padding="25"
+                           BackgroundColor="{x:Static local:ColorPallet.BackgroundMain}"
                            Margin="0">
                         <StackLayout>
                             <Image Source="{Binding poster_path}" Aspect="AspectFill" />
                             <Label x:Name="NameLabel"
                                    Text="{Binding title}"   
+                                   TextColor="{x:Static local:ColorPallet.TextColorInfo}"
+                                   BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}"
                                    FontSize="20"/>
                         <StackLayout Orientation="Vertical">
                             <Label x:Name="MarkLabel"
+                                   TextColor="{x:Static local:ColorPallet.TextColorInfo}"
+                                   BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}"
                                    FontSize="Body">
                                 <Label.FormattedText>
                                     <FormattedString>
@@ -26,7 +33,9 @@
                                 </Label.FormattedText>
                             </Label>
                             <Label x:Name="YourMarkLabel"
-                                   FontSize="Body">
+                                   FontSize="Body"
+                                   TextColor="{x:Static local:ColorPallet.TextColorInfo}"
+                                   BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}">
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Text="Your Mark:    " />
@@ -35,7 +44,9 @@
                                 </Label.FormattedText>
                             </Label>
                             <Label x:Name="OverviewLabel"
-                                   FontSize="Body">
+                                   FontSize="Body"
+                                   TextColor="{x:Static local:ColorPallet.TextColorInfo}"
+                                   BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}">
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Text="Overview:    "/>
@@ -45,15 +56,17 @@
                             </Label>
                             <ScrollView>
                                 <ListView x:Name="Carousel"
-                                      CachingStrategy="RecycleElement"
-                                      ItemsSource="{Binding genres}"
-                                      HeightRequest="100">
+                                          CachingStrategy="RecycleElement"
+                                          BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}"
+                                          ItemsSource="{Binding genres}"
+                                          HeightRequest="100">
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <ViewCell>
                                                 <Label Text="{Binding name}"  
-                                                   FontSize="Body"
-                                                   HorizontalOptions="Center"/>
+                                                       FontSize="Body"
+                                                       TextColor="{x:Static local:ColorPallet.TextColorInfo}"
+                                                       HorizontalOptions="Center"/>
                                             </ViewCell>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>

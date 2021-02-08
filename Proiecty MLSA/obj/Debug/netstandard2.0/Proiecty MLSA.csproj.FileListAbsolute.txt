@@ -97,3 +97,4 @@ C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstanda
 C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Proiecty MLSA.pdb
 C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Proiecty MLSA.csprojAssemblyReference.cache
 C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Views\Page1.xaml.g.cs
+C:\Users\Catalin\Desktop\Mlsa\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Views\ThemePage.xaml.g.cs

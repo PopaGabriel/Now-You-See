@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/gH7HrsbtnOXRj4twwI6n1kX3hSKdofvMJF8WN3WSvWgmH9MoaaNfJqeXXmAnOd1w1UdetEpaEbM8PddT444Rw==",
+  "dgSpecHash": "/0Kw/sGWpR0ZLy4vSbFMbQMfpQ9E/TQXIWJLKCNmmEDQSiIxU3W1E1P3uDNfrgm5irK44ypibVWYV7MrUlwgGw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\GitIgnore\\Now-You-See\\Proiecty MLSA.Android\\Proiecty MLSA.Android.csproj",
+  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\Mlsa\\Now-You-See\\Proiecty MLSA.Android\\Proiecty MLSA.Android.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Catalin\\.nuget\\packages\\chessie\\0.6.0\\chessie.0.6.0.nupkg.sha512",
     "C:\\Users\\Catalin\\.nuget\\packages\\fsharp.core\\4.0.1.7-alpha\\fsharp.core.4.0.1.7-alpha.nupkg.sha512",

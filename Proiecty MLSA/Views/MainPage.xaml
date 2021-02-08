@@ -1,53 +1,62 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:Proiecty_MLSA.Static_Values"
              x:Class="Proiecty_MLSA.MainPage"
              xmlns:viewmodels="clr-namespace:Proiecty_MLSA.Classes"
              x:DataType="viewmodels:Saved_Movie"
              xmlns:models="clr-namespace:Proiecty_MLSA.Classes">
-
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" 
                      Padding="0,0,100,0" 
                      Spacing="10">
             <Button x:Name="ProfileButton" 
                     Text="Profile"  
+                    BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}"
+                    TextColor="{x:Static local:ColorPallet.TextColorInfo}"
                     Clicked="GoToProfilePage"/>
             <SearchBar x:Name="NavigationBar" 
-                       
+                       TextColor="{x:Static local:ColorPallet.TextColorInfo}"
+                       CancelButtonColor="{x:Static local:ColorPallet.TextColorInfo}"
+                       BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}"
                        Placeholder="Search........"
                        FontSize="16"/>
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout Spacing="10">
+        <StackLayout Spacing="10"
+                     BackgroundColor="{x:Static local:ColorPallet.BackgroundMain}">
             <ImageButton x:Name="Image_Search" 
-                     WidthRequest="250" 
-                     HeightRequest="250" 
-                     CornerRadius="250" 
-                     Margin="20"
-                     Source="bed_double_fill.jpg"            
-                     BorderColor="#8FFBE1"        
-                     HorizontalOptions="Center"
-                     Clicked="Recomanda">
+                         BackgroundColor="{x:Static local:ColorPallet.BackgroundMain}"
+                         WidthRequest="250" 
+                         HeightRequest="250" 
+                         CornerRadius="250" 
+                         Margin="20"
+                         Source="bed_double_fill.jpg"               
+                         HorizontalOptions="Center"
+                         Clicked="Recomanda">
             </ImageButton>
             <Label x:Name="LabelInsideTheHotReleasesFrame" 
+                   BackgroundColor="{x:Static local:ColorPallet.BackgroundMain}"
+                   TextColor="{x:Static local:ColorPallet.TextColorInfo}"
                    Text="Fresh New Releases"
                    HorizontalTextAlignment="Center"
                    FontSize="16"/>
             <RefreshView x:Name="RefreshMain"
-                     RefreshColor="HotPink">
+                         RefreshColor="{x:Static local:ColorPallet.RefreshColor}">
                 <CollectionView x:Name="ÇollectionViewMainPage" 
-                        SelectionMode="Single"
-                        SelectionChanged="CollectionViewMainPage_SelectionChanged" >
+                                SelectionMode="Single"
+                                SelectionChanged="CollectionViewMainPage_SelectionChanged" 
+                                BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}">
                     <CollectionView.ItemsLayout>
-                        <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
+                        <LinearItemsLayout ItemSpacing="10" 
+                                           Orientation="Vertical"/>
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="viewmodels:Saved_Movie">
                             <Grid x:Name="GridMain?" 
-                              Padding="10"
-                              BackgroundColor="LightBlue">
+                                  Padding="10"
+                                  BackgroundColor="{x:Static local:ColorPallet.BackgroundCollectionItems}">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />

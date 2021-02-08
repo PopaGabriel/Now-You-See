@@ -1,5 +1,4 @@
 ﻿using Proiecty_MLSA.Classes;
-using Proiecty_MLSA.Static_Values;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +17,6 @@ namespace Proiecty_MLSA.Views
         public ProfilePage()
         {
             InitializeComponent();
-            setColors();
 
             GoodMovies = User.getInstance().GoodMovies;
             ListGoodMovies.ItemsSource = GoodMovies;
@@ -34,19 +32,6 @@ namespace Proiecty_MLSA.Views
             RefreshGood.Command = refreshCommand;
             RefreshBad.Command = refreshCommand;
         }
-        private void setColors()
-        {
-            BackgroundColor = ColorPallet.BackgroundMain;
-            ListGoodMovies.BackgroundColor = ColorPallet.BackgroundButton;
-            ListBadMovies.BackgroundColor = ColorPallet.BackgroundButton;
-            LabelBad.TextColor = ColorPallet.TextColorInfo;
-            LabelGood.TextColor = ColorPallet.TextColorInfo;
-        }
-        private async void ShowAllMovies(object sender, EventArgs e)
-        {
-            await Navigation.PopAsync();
-        }
-
         private async void ListMovies_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var SavedMovieInstance = e.CurrentSelection.FirstOrDefault() as Saved_Movie;
@@ -59,9 +44,9 @@ namespace Proiecty_MLSA.Views
             ((CollectionView)sender).SelectedItem = null;
         }
 
-        private void ThemeButton_Clicked(object sender, EventArgs e)
+        private async void ThemeButton_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new ThemePage());
         }
     }
 }

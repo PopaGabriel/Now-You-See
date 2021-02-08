@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MKFhsmG0zxIbAL9vif5WOOfpbeZMiMDAS4MZOEqbnkSf0T0R/cI1eoQGPmBqjo1f6QnR3a3WLGOyfYenzM1I+w==",
+  "dgSpecHash": "h+S4qn0eGngeH0zNVGbk4IpEWZCVGY0UyWhyjnyrc+60DIvt+1jdbF6Nzo46rABKGrQjGfdBTQlOBVg4L74rMg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\GitIgnore\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj",
+  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\Mlsa\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Catalin\\.nuget\\packages\\chessie\\0.6.0\\chessie.0.6.0.nupkg.sha512",
     "C:\\Users\\Catalin\\.nuget\\packages\\fsharp.core\\4.0.1.7-alpha\\fsharp.core.4.0.1.7-alpha.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8UEtnChpdYEDouIz9LbDBvGe3ahzetp9MXpE7UYDm8HVG4efO0oITrPyNmkIbIKbTlRUQw2RAWXfkbPu7FETHQ==",
+  "dgSpecHash": "zKHpU8OMUGriDhukafLOfwIEuOluQq/Z4tWnV4B8npYnEQJR0B+83nVEaxeWlKClI2OURbJRxgnPVhIkbw/sQQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\GitIgnore\\Now-You-See\\Proiecty MLSA.iOS\\Proiecty MLSA.iOS.csproj",
+  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\Mlsa\\Now-You-See\\Proiecty MLSA.iOS\\Proiecty MLSA.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Catalin\\.nuget\\packages\\chessie\\0.6.0\\chessie.0.6.0.nupkg.sha512",
     "C:\\Users\\Catalin\\.nuget\\packages\\fsharp.core\\4.0.1.7-alpha\\fsharp.core.4.0.1.7-alpha.nupkg.sha512",

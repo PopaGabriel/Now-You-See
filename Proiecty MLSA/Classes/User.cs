@@ -62,7 +62,7 @@ namespace Proiecty_MLSA.Classes
     public class User
     {
         private static User instance = null;
-
+        private String ColorTheme { get; set; }
         private Information info { set; get; }
         public List<Saved_Movie_Data> idsList { set; get; }
         public List<Saved_Movie> GoodMovies { set; get; }
@@ -83,6 +83,8 @@ namespace Proiecty_MLSA.Classes
             idsList.Add(new Saved_Movie_Data(4.5, 204));
             idsList.Add(new Saved_Movie_Data(5, 205));
             fillUserMovies();
+            ColorTheme = "Green";
+            ColorPallet.ChangeColorTheme(ColorTheme);
             info = new InformationBuilder().
                     setAge(10).
                     setAverageRating(CalculateRating()).
