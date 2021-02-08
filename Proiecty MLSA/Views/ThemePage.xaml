@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Proiecty_MLSA.Static_Values"
              x:Class="Proiecty_MLSA.Views.ThemePage"
-             BackgroundColor="{x:Static local:ColorPallet.BackgroundMain}">
+             BackgroundColor="{DynamicResource BackgroundMain}">
     <ContentPage.Content>
         <StackLayout>
             <CollectionView ItemsSource="{x:Static local:ColorPallet.ListThemes}"
@@ -20,7 +20,7 @@
                                Opacity="1"
                                HorizontalOptions="CenterAndExpand"
                                FontSize="Body"
-                               TextColor="{x:Static local:ColorPallet.TextColorInfo}"/>
+                               TextColor="{DynamicResource TextColorInfo}"/>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

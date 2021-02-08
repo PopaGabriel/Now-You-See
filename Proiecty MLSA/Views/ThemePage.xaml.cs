@@ -20,7 +20,7 @@ namespace Proiecty_MLSA.Views
 
         private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            await Task.Factory.StartNew(()=>ColorPallet.ChangeColorTheme(e.CurrentSelection.FirstOrDefault() as string));
+            await Task.Factory.StartNew(() => ColorPallet.ChangeColorTheme(e.CurrentSelection.FirstOrDefault() as string));
         }
     }
 }

@@ -76,6 +76,7 @@ namespace Proiecty_MLSA.Classes
 
             //I will have to add a new Json file for this crap
             //but it works so far as a proof of concept
+            ColorTheme = "Blue";
             idsList.Add(new Saved_Movie_Data(2.5, 200));
             idsList.Add(new Saved_Movie_Data(3, 201));
             idsList.Add(new Saved_Movie_Data(3.5, 202));
@@ -83,8 +84,6 @@ namespace Proiecty_MLSA.Classes
             idsList.Add(new Saved_Movie_Data(4.5, 204));
             idsList.Add(new Saved_Movie_Data(5, 205));
             fillUserMovies();
-            ColorTheme = "Green";
-            ColorPallet.ChangeColorTheme(ColorTheme);
             info = new InformationBuilder().
                     setAge(10).
                     setAverageRating(CalculateRating()).

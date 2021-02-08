@@ -7,7 +7,6 @@ namespace Proiecty_MLSA.Classes
         IInformationBuilder setAge(int age);
         IInformationBuilder setName(String Name);
         IInformationBuilder setAverageRating(double AverageRating);
-
         Information Build();
     }
 }

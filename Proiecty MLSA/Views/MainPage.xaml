@@ -12,22 +12,22 @@
                      Spacing="10">
             <Button x:Name="ProfileButton" 
                     Text="Profile"  
-                    BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}"
-                    TextColor="{x:Static local:ColorPallet.TextColorInfo}"
+                    BackgroundColor="{DynamicResource BackgroundButton}"
+                    TextColor="{DynamicResource TextColorInfo}"
                     Clicked="GoToProfilePage"/>
             <SearchBar x:Name="NavigationBar" 
-                       TextColor="{x:Static local:ColorPallet.TextColorInfo}"
-                       CancelButtonColor="{x:Static local:ColorPallet.TextColorInfo}"
-                       BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}"
+                       TextColor="{DynamicResource TextColorInfo}"
+                       CancelButtonColor="{DynamicResource TextColorInfo}"
+                       BackgroundColor="{DynamicResource BackgroundButton}"
                        Placeholder="Search........"
                        FontSize="16"/>
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout Spacing="10"
-                     BackgroundColor="{x:Static local:ColorPallet.BackgroundMain}">
+                     BackgroundColor="{DynamicResource BackgroundMain}">
             <ImageButton x:Name="Image_Search" 
-                         BackgroundColor="{x:Static local:ColorPallet.BackgroundMain}"
+                         BackgroundColor="{DynamicResource BackgroundMain}"
                          WidthRequest="250" 
                          HeightRequest="250" 
                          CornerRadius="250" 
@@ -37,17 +37,17 @@
                          Clicked="Recomanda">
             </ImageButton>
             <Label x:Name="LabelInsideTheHotReleasesFrame" 
-                   BackgroundColor="{x:Static local:ColorPallet.BackgroundMain}"
-                   TextColor="{x:Static local:ColorPallet.TextColorInfo}"
+                   BackgroundColor="{DynamicResource BackgroundMain}"
+                   TextColor="{DynamicResource TextColorInfo}"
                    Text="Fresh New Releases"
                    HorizontalTextAlignment="Center"
                    FontSize="16"/>
             <RefreshView x:Name="RefreshMain"
-                         RefreshColor="{x:Static local:ColorPallet.RefreshColor}">
+                         RefreshColor="{DynamicResource RefreshColor}">
                 <CollectionView x:Name="ÇollectionViewMainPage" 
                                 SelectionMode="Single"
                                 SelectionChanged="CollectionViewMainPage_SelectionChanged" 
-                                BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}">
+                                BackgroundColor="{DynamicResource BackgroundButton}">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout ItemSpacing="10" 
                                            Orientation="Vertical"/>
@@ -56,7 +56,7 @@
                         <DataTemplate x:DataType="viewmodels:Saved_Movie">
                             <Grid x:Name="GridMain?" 
                                   Padding="10"
-                                  BackgroundColor="{x:Static local:ColorPallet.BackgroundCollectionItems}">
+                                  BackgroundColor="{DynamicResource BackgroundCollectionItems}">
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="Auto" />
                                     <RowDefinition Height="Auto" />

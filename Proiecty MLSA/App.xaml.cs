@@ -9,10 +9,8 @@ namespace Proiecty_MLSA
     {
         public App()
         {
-            MainPage = new NavigationPage(new MainPage())
-            {
-                BarBackgroundColor = ColorPallet.BackgroundNavigationBar
-            };
+            InitializeComponent();
+            MainPage = new NavigationPage(new MainPage());
         }
 
         private async void enterData()

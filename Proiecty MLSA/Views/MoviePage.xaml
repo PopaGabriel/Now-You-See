@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Proiecty_MLSA.Static_Values"
              x:Class="Proiecty_MLSA.Views.MoviePage"
-             BackgroundColor="{x:Static local:ColorPallet.BackgroundMain}">
+             BackgroundColor="{DynamicResource BackgroundMain}">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout x:Name="MovieStack" 
@@ -11,19 +11,19 @@
                          Spacing="10">
                     <Frame x:Name="FrameStack" 
                            Padding="25"
-                           BackgroundColor="{x:Static local:ColorPallet.BackgroundMain}"
+                           BackgroundColor="{DynamicResource BackgroundMain}"
                            Margin="0">
                         <StackLayout>
                             <Image Source="{Binding poster_path}" Aspect="AspectFill" />
                             <Label x:Name="NameLabel"
                                    Text="{Binding title}"   
-                                   TextColor="{x:Static local:ColorPallet.TextColorInfo}"
-                                   BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}"
+                                   TextColor="{DynamicResource TextColorInfo}"
+                                   BackgroundColor="{DynamicResource BackgroundButton}"
                                    FontSize="20"/>
                         <StackLayout Orientation="Vertical">
                             <Label x:Name="MarkLabel"
-                                   TextColor="{x:Static local:ColorPallet.TextColorInfo}"
-                                   BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}"
+                                   TextColor="{DynamicResource TextColorInfo}"
+                                   BackgroundColor="{DynamicResource BackgroundButton}"
                                    FontSize="Body">
                                 <Label.FormattedText>
                                     <FormattedString>
@@ -34,8 +34,8 @@
                             </Label>
                             <Label x:Name="YourMarkLabel"
                                    FontSize="Body"
-                                   TextColor="{x:Static local:ColorPallet.TextColorInfo}"
-                                   BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}">
+                                   TextColor="{DynamicResource TextColorInfo}"
+                                   BackgroundColor="{DynamicResource BackgroundButton}">
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Text="Your Mark:    " />
@@ -45,8 +45,8 @@
                             </Label>
                             <Label x:Name="OverviewLabel"
                                    FontSize="Body"
-                                   TextColor="{x:Static local:ColorPallet.TextColorInfo}"
-                                   BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}">
+                                   TextColor="{DynamicResource TextColorInfo}"
+                                   BackgroundColor="{DynamicResource BackgroundButton}">
                                 <Label.FormattedText>
                                     <FormattedString>
                                         <Span Text="Overview:    "/>
@@ -57,7 +57,7 @@
                             <ScrollView>
                                 <ListView x:Name="Carousel"
                                           CachingStrategy="RecycleElement"
-                                          BackgroundColor="{x:Static local:ColorPallet.BackgroundButton}"
+                                          BackgroundColor="{DynamicResource BackgroundButton}"
                                           ItemsSource="{Binding genres}"
                                           HeightRequest="100">
                                     <ListView.ItemTemplate>
@@ -65,7 +65,7 @@
                                             <ViewCell>
                                                 <Label Text="{Binding name}"  
                                                        FontSize="Body"
-                                                       TextColor="{x:Static local:ColorPallet.TextColorInfo}"
+                                                       TextColor="{DynamicResource TextColorInfo}"
                                                        HorizontalOptions="Center"/>
                                             </ViewCell>
                                         </DataTemplate>
