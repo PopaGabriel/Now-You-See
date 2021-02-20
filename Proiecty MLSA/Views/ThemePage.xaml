@@ -2,10 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Proiecty_MLSA.Static_Values"
-             x:Class="Proiecty_MLSA.Views.ThemePage"
-             BackgroundColor="{DynamicResource BackgroundMain}">
+             x:Class="Proiecty_MLSA.Views.ThemePage">
     <ContentPage.Content>
-        <StackLayout>
+
+        <StackLayout x:Name = "StackLayoutThemePage">
             <CollectionView ItemsSource="{x:Static local:ColorPallet.ListThemes}"
                             SelectionMode="Single"
                             SelectionChanged="CollectionView_SelectionChanged"
@@ -13,12 +13,13 @@
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout ItemSpacing="10"  Orientation="Vertical"/>
                 </CollectionView.ItemsLayout>
-                
+               
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Label Text="{Binding}"
                                Opacity="1"
                                HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
                                FontSize="Body"
                                TextColor="{DynamicResource TextColorInfo}"/>
                     </DataTemplate>

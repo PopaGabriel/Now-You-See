@@ -39,6 +39,11 @@ namespace Proiecty_MLSA
             }
 
         }
+
+        protected override void OnAppearing()
+        {
+
+        }
         private async void Recomanda(object sender, EventArgs e)
         {
 

@@ -3,6 +3,7 @@ using Proiecty_MLSA.Static_Values;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -65,13 +66,13 @@ namespace Proiecty_MLSA.Classes
         private String ColorTheme { get; set; }
         private Information info { set; get; }
         public List<Saved_Movie_Data> idsList { set; get; }
-        public List<Saved_Movie> GoodMovies { set; get; }
-        public List<Saved_Movie> BadMovies { set; get; }
+        public ObservableCollection<Saved_Movie> GoodMovies { set; get; }
+        public ObservableCollection<Saved_Movie> BadMovies { set; get; }
         private String Email { set; get; }
         private User()
         {
-            GoodMovies = new List<Saved_Movie>();
-            BadMovies = new List<Saved_Movie>();
+            GoodMovies = new ObservableCollection<Saved_Movie>();
+            BadMovies = new ObservableCollection<Saved_Movie>();
             idsList = new List<Saved_Movie_Data>();
 
             //I will have to add a new Json file for this crap

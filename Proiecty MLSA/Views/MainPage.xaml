@@ -1,11 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:local="clr-namespace:Proiecty_MLSA.Static_Values"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proiecty_MLSA.MainPage"
              xmlns:viewmodels="clr-namespace:Proiecty_MLSA.Classes"
-             x:DataType="viewmodels:Saved_Movie"
-             xmlns:models="clr-namespace:Proiecty_MLSA.Classes">
+             x:DataType="viewmodels:Saved_Movie">
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" 
                      Padding="0,0,100,0" 
@@ -17,6 +15,7 @@
                     Clicked="GoToProfilePage"/>
             <SearchBar x:Name="NavigationBar" 
                        TextColor="{DynamicResource TextColorInfo}"
+                       PlaceholderColor="{DynamicResource TextColorInfo}"
                        CancelButtonColor="{DynamicResource TextColorInfo}"
                        BackgroundColor="{DynamicResource BackgroundButton}"
                        Placeholder="Search........"
@@ -26,6 +25,7 @@
     <ContentPage.Content>
         <StackLayout Spacing="10"
                      BackgroundColor="{DynamicResource BackgroundMain}">
+            
             <ImageButton x:Name="Image_Search" 
                          BackgroundColor="{DynamicResource BackgroundMain}"
                          WidthRequest="250" 

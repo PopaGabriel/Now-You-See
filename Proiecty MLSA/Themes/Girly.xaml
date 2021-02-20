@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiecty_MLSA.Themes.Girly">
+
+    <Color x:Key="BackgroundMain">#d3f8e2</Color>
+
+    <Color x:Key="BackgroundCollectionItems">#e4c1f9</Color>
+
+    <Color x:Key="BackgroundButton">#f694c1</Color>
+
+    <Color x:Key="BackgroundNavigationBar">#ede7b1</Color>
+
+    <Color x:Key="BackgroundInfo">#a9def9</Color>
+
+    <Color x:Key="TextColorInfo">#0ead69</Color>
+
+    <Color x:Key="RefreshColor">#0ead69</Color>
+</ResourceDictionary>

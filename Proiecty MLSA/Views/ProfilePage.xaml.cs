@@ -1,18 +1,20 @@
 ﻿using Proiecty_MLSA.Classes;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
+using Proiecty_MLSA.Static_Values;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Proiecty_MLSA.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ProfilePage : ContentPage
+    public partial class ProfilePage
     {
-        public List<Saved_Movie> GoodMovies { get; set; }
-        public List<Saved_Movie> BadMovies { get; set; }
+        public ObservableCollection<Saved_Movie> GoodMovies { get; set; }
+        public ObservableCollection<Saved_Movie> BadMovies { get; set; }
 
         public ProfilePage()
         {
@@ -32,14 +34,18 @@ namespace Proiecty_MLSA.Views
             RefreshGood.Command = refreshCommand;
             RefreshBad.Command = refreshCommand;
         }
+        protected override void OnAppearing()
+        {
+            StackLayoutProfilePage.Background = ColorPallet.getBackground();
+        }
         private async void ListMovies_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var SavedMovieInstance = e.CurrentSelection.FirstOrDefault() as Saved_Movie;
+            var savedMovieInstance = e.CurrentSelection.FirstOrDefault() as Saved_Movie;
 
-            if (SavedMovieInstance == null)
+            if (savedMovieInstance == null)
                 return;
 
-            await Navigation.PushAsync(new MoviePage(SavedMovieInstance));
+            await Navigation.PushAsync(new MoviePage(savedMovieInstance));
 
             ((CollectionView)sender).SelectedItem = null;
         }

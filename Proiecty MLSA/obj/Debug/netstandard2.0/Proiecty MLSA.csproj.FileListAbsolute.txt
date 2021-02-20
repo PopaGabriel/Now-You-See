@@ -100,3 +100,5 @@ C:\Users\Catalin\Desktop\GitIgnore\Now-You-See\Proiecty MLSA\obj\Debug\netstanda
 C:\Users\Catalin\Desktop\Mlsa\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Views\ThemePage.xaml.g.cs
 C:\Users\Catalin\Desktop\Mlsa\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Themes\LightBlueTheme.xaml.g.cs
 C:\Users\Catalin\Desktop\Mlsa\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Themes\RedTheme.xaml.g.cs
+C:\Users\Catalin\Desktop\Mlsa\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Themes\Girly.xaml.g.cs
+C:\Users\Catalin\Desktop\Mlsa\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Languages\EnglishLanguage.xaml.g.cs

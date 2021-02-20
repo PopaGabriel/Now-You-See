@@ -9,15 +9,17 @@ namespace Proiecty_MLSA
     {
         public App()
         {
+            Device.SetFlags(new string[] { "Brush_Experimental" });
+            ColorPallet.ChangeColorTheme("Girly");
             InitializeComponent();
             MainPage = new NavigationPage(new MainPage());
         }
 
         private async void enterData()
         {
-            await Task.Run(() => User.getInstance());
-            await Task.Run(() => Genres.getInstance());
-            await Task.Run(() => ApiHelper.getInstance());
+            await Task.Run(User.getInstance);
+            await Task.Run(Genres.getInstance);
+            await Task.Run(ApiHelper.getInstance);
         }
 
         protected override void OnStart()

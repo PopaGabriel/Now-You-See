@@ -2,11 +2,8 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:Proiecty_MLSA.Classes"
-             xmlns:local="clr-namespace:Proiecty_MLSA.Static_Values"
              x:DataType="viewmodels:Saved_Movie"
-             xmlns:models="clr-namespace:Proiecty_MLSA"
-             x:Class="Proiecty_MLSA.Views.ProfilePage"
-             BackgroundColor="{DynamicResource BackgroundMain}">
+             x:Class="Proiecty_MLSA.Views.ProfilePage">
     <NavigationPage.TitleView>
         <Button x:Name="ProfileButton"
                 HorizontalOptions="End"
@@ -18,7 +15,8 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" 
-                     VerticalOptions="CenterAndExpand">
+                     VerticalOptions="CenterAndExpand"
+                     x:Name="StackLayoutProfilePage">
             <Label x:Name="LabelGood"
                    BackgroundColor="{DynamicResource BackgroundMain}"
                    TextColor="{DynamicResource TextColorInfo}"
@@ -29,11 +27,10 @@
                          RefreshColor="{DynamicResource RefreshColor}"
                          HorizontalOptions="CenterAndExpand">
                 <CollectionView x:Name="ListGoodMovies" 
-                                BackgroundColor="{DynamicResource BackgroundButton}"
+                                Opacity="1"
                                 SelectionMode="Single"
                                 SelectionChanged="ListMovies_SelectionChanged"
-                                EmptyView="Empty list so far :("
-                                Grid.ColumnSpan="2">
+                                EmptyView="Empty list so far :(">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout ItemSpacing="10"  Orientation="Vertical"/>
                     </CollectionView.ItemsLayout>
@@ -80,10 +77,9 @@
                          HorizontalOptions="CenterAndExpand">
                 <CollectionView x:Name="ListBadMovies" 
                                 SelectionMode="Single"
-                                BackgroundColor="{DynamicResource BackgroundButton}"
+                                Opacity="1"
                                 SelectionChanged="ListMovies_SelectionChanged"
-                                EmptyView="Empty list so far :("
-                                Grid.ColumnSpan="2">
+                                EmptyView="Empty list so far :(">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout ItemSpacing="10"  
                                            Orientation="Vertical"/>
