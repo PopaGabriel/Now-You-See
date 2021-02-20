@@ -1,13 +1,12 @@
-﻿using System.Collections.Generic;
-using Proiecty_MLSA.Themes;
+﻿using Proiecty_MLSA.Themes;
 using Xamarin.Forms;
 
 namespace Proiecty_MLSA.Static_Values
 {
     public static class ColorPallet
     {
-        public static string[] ListThemes = new string[] { "Default Theme", "Red Theme","Girly Theme" };
-        public static Brush getBackground()
+        public static readonly string[] ListThemes = { "Default Theme", "Red Theme","Girly Theme" };
+        public static Brush GetBackground()
         {
             var background = new LinearGradientBrush
             {

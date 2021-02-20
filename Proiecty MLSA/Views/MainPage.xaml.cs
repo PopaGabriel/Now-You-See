@@ -10,12 +10,12 @@ using Xamarin.Forms;
 
 namespace Proiecty_MLSA
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage
     {
         private List<Saved_Movie> NewMovies { set; get; }
         public MainPage()
         {
-            Task.Run(() => makePopularMovies());
+            Task.Run(MakePopularMovies);
 
             InitializeComponent();
 
@@ -26,28 +26,26 @@ namespace Proiecty_MLSA
             RefreshMain.Command = refreshCommand;
 
         }
-        public void makePopularMovies()
+        public void MakePopularMovies()
         {
-            ApiHelper apiHelper = ApiHelper.getInstance();
+            var apiHelper = ApiHelper.getInstance();
 
-            if (NewMovies == null)
-            {
-                NewMovies = apiHelper.GetPopularMovies().Result;
+            if (NewMovies != null) return;
 
-                ÇollectionViewMainPage.ItemsSource = NewMovies;
-                BindingContext = this;
-            }
+            NewMovies = apiHelper.GetPopularMovies().Result;
+            CollectionViewMainPage.ItemsSource = NewMovies;
+            BindingContext = this;
 
         }
 
         protected override void OnAppearing()
         {
-
+            StackMain.Background = ColorPallet.GetBackground();
         }
         private async void Recomanda(object sender, EventArgs e)
         {
 
-            Console.Out.WriteLine(User.getInstance() + "\nDE ce?");
+            await Console.Out.WriteLineAsync(User.getInstance() + "\nDE ce?");
 
             if (Device.RuntimePlatform == Device.Android)
                 await Navigation.PopAsync();
@@ -59,15 +57,17 @@ namespace Proiecty_MLSA
 
         private async void CollectionViewMainPage_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var SelectedMovie = e.CurrentSelection.FirstOrDefault() as Saved_Movie;
-
-            if (SelectedMovie == null)
+            if (!(e.CurrentSelection.FirstOrDefault() is Saved_Movie selectedMovie))
                 return;
 
-            await Navigation.PushAsync(new MoviePage(SelectedMovie));
+            await Navigation.PushAsync(new MoviePage(selectedMovie));
 
             ((CollectionView)sender).SelectedItem = null;
 
+        }
+        private async void SearchButton_OnClicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SearchPageXama("Search...."));
         }
     }
 }

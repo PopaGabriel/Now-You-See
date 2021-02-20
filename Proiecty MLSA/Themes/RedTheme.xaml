@@ -11,6 +11,8 @@
 
     <Color x:Key="BackgroundNavigationBar">#EF476F</Color>
 
+    <Color x:Key="FrameContour">#fcd5ce</Color>
+
     <Color x:Key="BackgroundInfo">#FF228B22</Color>
 
     <Color x:Key="TextColorInfo">#118AB2</Color>

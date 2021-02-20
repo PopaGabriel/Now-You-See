@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiecty_MLSA.SearchPageXama"
+             xmlns:viewmodels="clr-namespace:Proiecty_MLSA.Classes"
+             x:DataType="viewmodels:Saved_Movie">
+    <NavigationPage.TitleView>
+        <SearchBar x:Name="NavigationBar" 
+                   TextColor="{DynamicResource TextColorInfo}"
+                   PlaceholderColor="{DynamicResource TextColorInfo}"
+                   CancelButtonColor="{DynamicResource TextColorInfo}"
+                   BackgroundColor="{DynamicResource BackgroundButton}"
+                   TextTransform="Lowercase"
+                   Placeholder="Search........"
+                   FontSize="16"
+                   SearchButtonPressed="NavigationBar_OnSearchButtonPressed"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame  BorderColor="{DynamicResource FrameContour}"
+                    BackgroundColor="Transparent">
+                <Label x:Name="LabelInsideTheHotReleasesFrame"
+                       TextColor="{DynamicResource TextColorInfo}"
+                       Text="Search Results"
+                       HorizontalTextAlignment="Center"
+                       FontSize="16"
+                       FontAttributes="Bold"/>
+            </Frame>
+
+                <RefreshView x:Name="RefreshSearch"
+                         RefreshColor="{DynamicResource RefreshColor}">
+                <CollectionView x:Name="CollectionViewSearchPage" 
+                                SelectionMode="Single"
+                                SelectionChanged="CollectionViewMainPage_OnSelectionChanged" >
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout ItemSpacing="10" 
+                                           Orientation="Vertical"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="viewmodels:Saved_Movie">
+                            <Grid x:Name="GridMain?" 
+                                  Padding="10"
+                                  BackgroundColor="{DynamicResource BackgroundCollectionItems}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.RowSpan="2"
+                                        Source="{Binding poster_path}"
+                                        Aspect="AspectFill"
+                                        HeightRequest="60"
+                                        WidthRequest="60" />
+                                <Label Grid.Row="0" Grid.Column="1"
+                                       Text="{Binding title}"
+                                       FontAttributes="Bold" />
+                                <Label Grid.Row="1"
+                                       Grid.Column="1"
+                                       Text="{Binding vote_average}"
+                                       FontAttributes="Italic"
+                                       VerticalOptions="End" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

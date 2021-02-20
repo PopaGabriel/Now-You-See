@@ -1,43 +1,37 @@
 ﻿using Proiecty_MLSA.Classes;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 
 namespace Proiecty_MLSA.Static_Values
 {
     class Genres
     {
-        private List<Genre> genres;
-        public static Genres instance = null;
+        private List<Genre> _genres;
+        public static Genres Instance;
         private Genres()
         {
-            genres = new List<Genre>();
-            fillGenres();
+            _genres = new List<Genre>();
+            FillGenres();
         }
-        public Genre getGenre(int id)
+        public Genre GetGenre(int id)
         {
-            foreach (Genre genre in genres)
-                if (genre.id == id)
-                    return genre;
-
-            return null;
+            return _genres.FirstOrDefault(genre => genre.id == id);
         }
-        private async void fillGenres()
+        private async void FillGenres()
         {
-            using (HttpResponseMessage message = await ApiHelper.getInstance().GetClient().GetAsync(ApiHelper.genresList))
+            using (HttpResponseMessage message = await ApiHelper.getInstance().GetClient().GetAsync(ApiHelper.GenresList))
             {
-                if (message.IsSuccessStatusCode)
-                    if (genres.Count == 0)
-                    {
-                        Movie movie = await message.Content.ReadAsAsync<Movie>();
-                        genres = movie.genres;
-                    }
+                if (!message.IsSuccessStatusCode) return;
+                if (_genres.Count != 0) return;
+
+                var movie = await message.Content.ReadAsAsync<Movie>();
+                _genres = movie.genres;
             }
         }
-        public static Genres getInstance()
+        public static Genres GetInstance()
         {
-            if (instance == null)
-                instance = new Genres();
-            return instance;
+            return Instance ?? (Instance = new Genres());
         }
     }
 }

@@ -15,14 +15,14 @@ namespace Proiecty_MLSA.Classes
     }
     public class Saved_Movie_Data
     {
-        public Saved_Movie_Data(double rating, int id)
+        public Saved_Movie_Data(double rating, double id)
         {
             this.rating = rating;
             this.id = id;
         }
         public double rating { set; get; }
 
-        public int id { get; set; }
+        public double id { get; set; }
     }
 
     public class ProductionCompany

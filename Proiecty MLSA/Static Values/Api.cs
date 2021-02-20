@@ -1,6 +1,7 @@
 ﻿using Proiecty_MLSA.Classes;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -9,8 +10,8 @@ namespace Proiecty_MLSA.Static_Values
 {
     public class ApiHelper
     {
-        private HttpClient ApiClient;
-        private static ApiHelper instance = null;
+        private readonly HttpClient _apiClient;
+        private static ApiHelper _instance;
 
         public const string UriStringBase = "https://api.themoviedb.org/3/";
 
@@ -18,47 +19,60 @@ namespace Proiecty_MLSA.Static_Values
         // Example: https://api.themoviedb.org/3/movie/2000?api_key=a54067ba9e2ae368e6a89cc91f806adc&language=en-US
         public const string UriStringMovieGet = UriStringBase + "movie/";
         public const string ApiKey = "a54067ba9e2ae368e6a89cc91f806adc";
-        public const string genresList = UriStringBase + "genre/movie/list?api_key=" + ApiKey;
+        public const string GenresList = UriStringBase + "genre/movie/list?api_key=" + ApiKey;
         //https://api.themoviedb.org/3/movie/popular?api_key=a54067ba9e2ae368e6a89cc91f806adc&language=en-US&page=1
         public const string PopularApiAddress = UriStringBase + "popular?api_key=" + ApiKey + "&language=en-US&page=1";
         public const string languageAM = "language=en-US";
 
         public static ApiHelper getInstance()
         {
-            if (instance == null)
-                instance = new ApiHelper();
-            return instance;
+            return _instance ?? (_instance = new ApiHelper());
         }
         private ApiHelper()
         {
-            ApiClient = new HttpClient();
-            ApiClient.BaseAddress = new Uri(UriStringBase);
-            ApiClient.DefaultRequestHeaders.Accept.Clear();
-            ApiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            _apiClient = new HttpClient {BaseAddress = new Uri(UriStringBase)};
+            _apiClient.DefaultRequestHeaders.Accept.Clear();
+            _apiClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         public async Task<List<Saved_Movie>> GetPopularMovies()
         {
-            using (HttpResponseMessage message = await ApiClient.GetAsync("https://api.themoviedb.org/3/movie/popular?api_key=a54067ba9e2ae368e6a89cc91f806adc&language=en-US&page=1"))
+            using (var message = await _apiClient.GetAsync("https://api.themoviedb.org/3/movie/popular?api_key=a54067ba9e2ae368e6a89cc91f806adc&language=en-US&page=1"))
             {
-                if (message.IsSuccessStatusCode)
-                {
-                    List<Saved_Movie> listMovies = new List<Saved_Movie>();
-                    Root root = await message.Content.ReadAsAsync<Root>();
+                if (!message.IsSuccessStatusCode) return null;
 
-                    for (int i = 0; i < root.results.Count; i++)
-                        listMovies.Add(new Saved_Movie(-1, await ApiHelper.getInstance().GetMovie(root.results[i].id)));
+                var listMovies = new List<Saved_Movie>();
+                var root = await message.Content.ReadAsAsync<Root>();
 
-                    return listMovies;
-                }
-                else
-                    return null;
+                foreach (var t in root.results)
+                    listMovies.Add(new Saved_Movie(0, await ApiHelper.getInstance().GetMovie(t.id)));
+
+                return listMovies;
+            }
+        }
+        public async Task<ObservableCollection<Saved_Movie>> SearchMovies(string baseText)
+        {
+            if (baseText == null) return null;
+            var apiBuild = "https://api.themoviedb.org/3/search/movie?api_key=" + ApiKey + "&language=en-US&query=" + baseText + "&page=1&include_adult=true";
+
+            using (var message = await _apiClient.GetAsync(apiBuild))
+            {
+                if (!message.IsSuccessStatusCode) return null;
+
+                var listMovies = new ObservableCollection<Saved_Movie>();
+                var root = await message.Content.ReadAsAsync<Root>();
+
+                foreach (var t in root.results)
+                    listMovies.Add(new Saved_Movie(0, await ApiHelper.getInstance().GetMovie(t.id)));
+
+                return listMovies;
             }
         }
 
-        public async Task<Movie> GetMovie(int id)
+
+        public async Task<Movie> GetMovie(double id)
         {
-            using (HttpResponseMessage message = await ApiClient.GetAsync(UriStringMovieGet + id + "?api_key=" + ApiKey + "&" + languageAM))
+            using (HttpResponseMessage message = await _apiClient.GetAsync(UriStringMovieGet + id + "?api_key=" + ApiKey + "&" + languageAM))
             {
                 if (message.IsSuccessStatusCode)
                 {
@@ -72,7 +86,7 @@ namespace Proiecty_MLSA.Static_Values
         }
         public HttpClient GetClient()
         {
-            return ApiClient;
+            return _apiClient;
         }
     }
 }

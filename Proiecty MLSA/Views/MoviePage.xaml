@@ -1,17 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Proiecty_MLSA.Views.MoviePage"
-             BackgroundColor="{DynamicResource BackgroundMain}">
+             xmlns:classes="clr-namespace:Proiecty_MLSA.Classes;assembly=Proiecty MLSA"
+             x:Class="Proiecty_MLSA.Views.MoviePage" x:DataType="classes:Saved_Movie">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout x:Name="MovieStack" 
                          Orientation="Vertical"
-                         Spacing="10">
-                    <Frame x:Name="FrameStack" 
-                           Padding="25"
-                           BackgroundColor="{DynamicResource BackgroundMain}"
-                           Margin="0">
+                         Spacing="0">
+                <Frame x:Name="FrameStack" 
+                       Padding="25"
+                       Margin="0">
                         <StackLayout>
                             <Image Source="{Binding poster_path}" Aspect="AspectFill" />
                             <Label x:Name="NameLabel"
@@ -19,7 +18,6 @@
                                    TextColor="{DynamicResource TextColorInfo}"
                                    BackgroundColor="{DynamicResource BackgroundButton}"
                                    FontSize="20"/>
-                        <StackLayout Orientation="Vertical">
                             <Label x:Name="MarkLabel"
                                    TextColor="{DynamicResource TextColorInfo}"
                                    BackgroundColor="{DynamicResource BackgroundButton}"
@@ -62,7 +60,7 @@
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
                                             <ViewCell>
-                                                <Label Text="{Binding name}"  
+                                                <Label Text="{Binding }"  
                                                        FontSize="Body"
                                                        TextColor="{DynamicResource TextColorInfo}"
                                                        HorizontalOptions="Center"/>
@@ -72,14 +70,11 @@
                                 </ListView>
                             </ScrollView>
                         </StackLayout>
-                    </StackLayout>
                     </Frame>
-                    <StackLayout>
-                    <Grid x:Name="Buttons" ColumnDefinitions="50*, 50*" ColumnSpacing="0" HorizontalOptions="FillAndExpand"  >
-                        <Button Text="Add Movie" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="AddToUserList" Grid.Column="0" BackgroundColor="ForestGreen"/>
-                        <Button Text="Remove Movie" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="RemoveFromUserList" Grid.Column="1" BackgroundColor="DarkRed"/>
-                    </Grid>
-                </StackLayout>
+                <Grid x:Name="Buttons" ColumnDefinitions="50*, 50*" ColumnSpacing="0" HorizontalOptions="FillAndExpand"  >
+                    <Button Text="Add Movie" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="AddToUserList" Grid.Column="0" BackgroundColor="ForestGreen"/>
+                    <Button Text="Remove Movie" HorizontalOptions="Fill" VerticalOptions="Fill" Clicked="RemoveFromUserList" Grid.Column="1" BackgroundColor="DarkRed"/>
+                </Grid>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

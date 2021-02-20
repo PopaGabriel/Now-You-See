@@ -18,7 +18,7 @@ namespace Proiecty_MLSA
         private async void enterData()
         {
             await Task.Run(User.getInstance);
-            await Task.Run(Genres.getInstance);
+            await Task.Run(Genres.GetInstance);
             await Task.Run(ApiHelper.getInstance);
         }
 

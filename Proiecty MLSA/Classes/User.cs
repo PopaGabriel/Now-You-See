@@ -14,7 +14,7 @@ namespace Proiecty_MLSA.Classes
     public class Information
     {
         private int id { set; get; }
-        private String UserName { set; get; }
+        private string UserName { set; get; }
         private double AverageRating { set; get; }
 
         private double age { set; get; }
@@ -93,13 +93,11 @@ namespace Proiecty_MLSA.Classes
         }
         public static User getInstance()
         {
-            if (instance == null)
-                instance = new User();
-            return instance;
+            return instance ?? (instance = new User());
         }
         public double CalculateRating()
         {
-            double sum = 0.0;
+            var sum = 0.0;
             foreach (Saved_Movie movie in GoodMovies)
             {
                 sum += movie.savedRating;
@@ -133,39 +131,36 @@ namespace Proiecty_MLSA.Classes
         }
         public static void SaveData()
         {
-            string submittedFilePath =
+            var submittedFilePath =
             Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\UserData.json";
-            string text = File.ReadAllText(submittedFilePath);
+            string text;
 
-            using (StreamWriter file = new StreamWriter(submittedFilePath))
+            using (var file = new StreamWriter(submittedFilePath))
             {
-                JsonSerializer serializer = new JsonSerializer();
-                List<Saved_Movie> movies = ApiHelper.getInstance().GetPopularMovies().Result;
+                var serializer = new JsonSerializer();
+                var movies = ApiHelper.getInstance().GetPopularMovies().Result;
                 serializer.Serialize(file, movies);
             }
-
-            text = File.ReadAllText(submittedFilePath);
-            Console.WriteLine(text + "Dap Florin");
 
         }
         public override string ToString()
         {
-            StringBuilder GoodString = new StringBuilder();
-            StringBuilder BadString = new StringBuilder();
-            foreach (Movie movie in GoodMovies)
+            var GoodString = new StringBuilder();
+            var BadString = new StringBuilder();
+            foreach (var movie in GoodMovies)
                 GoodString.Append(movie);
-            foreach (Movie movie in BadMovies)
+            foreach (var movie in BadMovies)
                 BadMovies.Append(movie);
             return info.getId() + " " + GoodString + " " + BadString;
         }
     }
     public class MarkSort : IComparer
     {
-        int IComparer.Compare(Object x, Object y)
+        int IComparer.Compare(object x, object y)
         {
-            Movie A = (Movie)x;
-            Movie B = (Movie)y;
-            return ((new CaseInsensitiveComparer()).Compare(B.vote_average, A.vote_average));
+            var a = (Movie)x;
+            var b = (Movie)y;
+            return ((new CaseInsensitiveComparer()).Compare(b.vote_average, a.vote_average));
         }
     }
 }

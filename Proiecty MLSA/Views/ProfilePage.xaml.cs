@@ -1,6 +1,5 @@
 ﻿using Proiecty_MLSA.Classes;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
@@ -36,7 +35,7 @@ namespace Proiecty_MLSA.Views
         }
         protected override void OnAppearing()
         {
-            StackLayoutProfilePage.Background = ColorPallet.getBackground();
+            StackLayoutProfilePage.Background = ColorPallet.GetBackground();
         }
         private async void ListMovies_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -50,9 +49,9 @@ namespace Proiecty_MLSA.Views
             ((CollectionView)sender).SelectedItem = null;
         }
 
-        private async void ThemeButton_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new ThemePage());
+        private void ThemeButton_Clicked(object sender, EventArgs e)
+        { 
+            Navigation.PushAsync(new ThemePage());
         }
     }
 }

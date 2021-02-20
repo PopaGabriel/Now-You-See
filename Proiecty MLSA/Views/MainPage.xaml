@@ -5,29 +5,50 @@
              xmlns:viewmodels="clr-namespace:Proiecty_MLSA.Classes"
              x:DataType="viewmodels:Saved_Movie">
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal" 
-                     Padding="0,0,100,0" 
-                     Spacing="10">
-            <Button x:Name="ProfileButton" 
+        <Grid>
+            <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button 
+                    Grid.Column="0"
+                    Grid.Row="0"
+                    x:Name="ProfileButton" 
                     Text="Profile"  
                     BackgroundColor="{DynamicResource BackgroundButton}"
                     TextColor="{DynamicResource TextColorInfo}"
-                    Clicked="GoToProfilePage"/>
-            <SearchBar x:Name="NavigationBar" 
-                       TextColor="{DynamicResource TextColorInfo}"
-                       PlaceholderColor="{DynamicResource TextColorInfo}"
-                       CancelButtonColor="{DynamicResource TextColorInfo}"
-                       BackgroundColor="{DynamicResource BackgroundButton}"
-                       Placeholder="Search........"
-                       FontSize="16"/>
-        </StackLayout>
+                    Clicked="GoToProfilePage"
+                    BorderColor="{DynamicResource FrameContour}"
+                    BorderWidth="2"/>
+            <Frame Grid.Column="1"
+                   Grid.Row="0"
+                   BackgroundColor="{DynamicResource BackgroundNavigationBar}"
+                   BorderColor="{DynamicResource FrameContour}"
+                   Padding="5,13,5,0">
+                <Label 
+                    Text="MAIN PAGE"
+                    FontSize="Body"
+                    TextColor="{DynamicResource TextColorInfo}"/>
+            </Frame>
+            <Button x:Name="SearchButton"
+                    BorderColor="{DynamicResource FrameContour}"
+                    BorderWidth="2"
+                    Grid.Column="2"
+                    Grid.Row="0"
+                    Text="Search"
+                    BackgroundColor="{DynamicResource BackgroundButton}"
+                    TextColor="{DynamicResource TextColorInfo}"
+                    Clicked="SearchButton_OnClicked"/>
+        </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout Spacing="10"
-                     BackgroundColor="{DynamicResource BackgroundMain}">
-            
-            <ImageButton x:Name="Image_Search" 
-                         BackgroundColor="{DynamicResource BackgroundMain}"
+        <StackLayout x:Name="StackMain"
+                     Spacing="10">
+            <ImageButton x:Name="ImageSearch" 
                          WidthRequest="250" 
                          HeightRequest="250" 
                          CornerRadius="250" 
@@ -36,18 +57,19 @@
                          HorizontalOptions="Center"
                          Clicked="Recomanda">
             </ImageButton>
-            <Label x:Name="LabelInsideTheHotReleasesFrame" 
-                   BackgroundColor="{DynamicResource BackgroundMain}"
-                   TextColor="{DynamicResource TextColorInfo}"
-                   Text="Fresh New Releases"
-                   HorizontalTextAlignment="Center"
-                   FontSize="16"/>
+            <Frame  BorderColor="{DynamicResource FrameContour}"
+                    BackgroundColor="Transparent">
+                <Label x:Name="LabelInsideTheHotReleasesFrame"
+                       TextColor="{DynamicResource TextColorInfo}"
+                       Text="Fresh New Releases"
+                       HorizontalTextAlignment="Center"
+                       FontSize="16"/>
+            </Frame>
             <RefreshView x:Name="RefreshMain"
                          RefreshColor="{DynamicResource RefreshColor}">
-                <CollectionView x:Name="ÇollectionViewMainPage" 
+                <CollectionView x:Name="CollectionViewMainPage" 
                                 SelectionMode="Single"
-                                SelectionChanged="CollectionViewMainPage_SelectionChanged" 
-                                BackgroundColor="{DynamicResource BackgroundButton}">
+                                SelectionChanged="CollectionViewMainPage_SelectionChanged" >
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout ItemSpacing="10" 
                                            Orientation="Vertical"/>
@@ -70,7 +92,7 @@
                                         Aspect="AspectFill"
                                         HeightRequest="60"
                                         WidthRequest="60" />
-                                <Label Grid.Column="1"
+                                <Label Grid.Row="0" Grid.Column="1"
                                        Text="{Binding title}"
                                        FontAttributes="Bold" />
                                 <Label Grid.Row="1"

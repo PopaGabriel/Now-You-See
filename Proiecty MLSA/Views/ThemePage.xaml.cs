@@ -15,13 +15,14 @@ namespace Proiecty_MLSA.Views
         public ThemePage()
         {
             InitializeComponent();
-            StackLayoutThemePage.Background = ColorPallet.getBackground();
+            Title = "Theme Page";
+            StackLayoutThemePage.Background = ColorPallet.GetBackground();
         }
 
         private void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ColorPallet.ChangeColorTheme(e.CurrentSelection.FirstOrDefault() as string);
-            StackLayoutThemePage.Background = ColorPallet.getBackground();
+            StackLayoutThemePage.Background = ColorPallet.GetBackground();
         }
     }
 }
