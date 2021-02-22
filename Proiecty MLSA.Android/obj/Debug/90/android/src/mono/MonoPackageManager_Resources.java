@@ -6,6 +6,8 @@ public class MonoPackageManager_Resources {
 		"Chessie.dll",
 		"FormsViewGroup.dll",
 		"FSharp.Core.dll",
+		"Lottie.Android.dll",
+		"Lottie.Forms.dll",
 		"Mono.Cecil.dll",
 		"Mono.Cecil.Mdb.dll",
 		"Mono.Cecil.Pdb.dll",

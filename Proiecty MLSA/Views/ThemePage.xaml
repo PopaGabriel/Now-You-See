@@ -4,27 +4,33 @@
              xmlns:local="clr-namespace:Proiecty_MLSA.Static_Values"
              x:Class="Proiecty_MLSA.Views.ThemePage">
     <ContentPage.Content>
+        <Grid>
+            <BoxView x:Name="BoxView"
+                     AnchorX="1"
+                     AnchorY="0"
+                     Scale="2"/>
+            <StackLayout x:Name = "StackLayoutThemePage">
+                <CollectionView ItemsSource="{x:Static local:ColorPallet.ListThemes}"
+                                SelectionMode="Single"
+                                SelectionChanged="CollectionView_SelectionChanged"
+                                EmptyView="Empty Themes :(">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout ItemSpacing="10"  Orientation="Vertical"/>
+                    </CollectionView.ItemsLayout>
 
-        <StackLayout x:Name = "StackLayoutThemePage">
-            <CollectionView ItemsSource="{x:Static local:ColorPallet.ListThemes}"
-                            SelectionMode="Single"
-                            SelectionChanged="CollectionView_SelectionChanged"
-                            EmptyView="Empty Themes :(">
-                <CollectionView.ItemsLayout>
-                    <LinearItemsLayout ItemSpacing="10"  Orientation="Vertical"/>
-                </CollectionView.ItemsLayout>
-               
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Label Text="{Binding}"
-                               Opacity="1"
-                               HorizontalOptions="CenterAndExpand"
-                               VerticalOptions="CenterAndExpand"
-                               FontSize="Body"
-                               TextColor="{DynamicResource TextColorInfo}"/>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </StackLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding}"
+                                   Opacity="1"
+                                   HorizontalOptions="CenterAndExpand"
+                                   VerticalOptions="CenterAndExpand"
+                                   FontSize="Body"
+                                   TextColor="{DynamicResource TextColorInfo}"/>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </Grid>
+        
     </ContentPage.Content>
 </ContentPage>

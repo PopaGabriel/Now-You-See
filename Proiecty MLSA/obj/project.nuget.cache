@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Oj1gcXXQjPKpLi3lhSWzTo7PqbaRudxgU3i/d6tD1UnO6UHiyLuwcT9HrmfLtNDrJ7q3M24fpykRp3StEu2oFA==",
+  "dgSpecHash": "oCltkKtlFkT5qXXKGAfkSPUN8SmfAy9NgnKaVd5MisbJpS5y6VaShkugP08k8X+jzLCXDrNyZa07hpPyz0MFmA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Catalin\\Desktop\\Mlsa\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Catalin\\.nuget\\packages\\chessie\\0.6.0\\chessie.0.6.0.nupkg.sha512",
+    "C:\\Users\\Catalin\\.nuget\\packages\\com.airbnb.xamarin.forms.lottie\\3.0.4\\com.airbnb.xamarin.forms.lottie.3.0.4.nupkg.sha512",
     "C:\\Users\\Catalin\\.nuget\\packages\\fsharp.core\\4.0.1.7-alpha\\fsharp.core.4.0.1.7-alpha.nupkg.sha512",
     "C:\\Users\\Catalin\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.7\\microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
     "C:\\Users\\Catalin\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

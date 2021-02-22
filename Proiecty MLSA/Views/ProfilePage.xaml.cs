@@ -2,7 +2,9 @@
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
+using Paket;
 using Proiecty_MLSA.Static_Values;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,17 +14,17 @@ namespace Proiecty_MLSA.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProfilePage
     {
-        public ObservableCollection<Saved_Movie> GoodMovies { get; set; }
-        public ObservableCollection<Saved_Movie> BadMovies { get; set; }
+        public ObservableCollection<SavedMovie> GoodMovies { get; set; }
+        public ObservableCollection<SavedMovie> BadMovies { get; set; }
 
         public ProfilePage()
         {
             InitializeComponent();
 
-            GoodMovies = User.getInstance().GoodMovies;
+            GoodMovies = User.GetInstance().GoodMovies;
             ListGoodMovies.ItemsSource = GoodMovies;
 
-            BadMovies = User.getInstance().BadMovies;
+            BadMovies = User.GetInstance().BadMovies;
             ListBadMovies.ItemsSource = BadMovies;
 
             ICommand refreshCommand = new Command(() =>
@@ -32,19 +34,20 @@ namespace Proiecty_MLSA.Views
             });
             RefreshGood.Command = refreshCommand;
             RefreshBad.Command = refreshCommand;
+
+            Task.Run(() => ColorPallet.AnimateBackground(BoxView));
         }
         protected override void OnAppearing()
         {
-            StackLayoutProfilePage.Background = ColorPallet.GetBackground();
+            BoxView.Background = ColorPallet.GetBackground();
         }
         private async void ListMovies_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var savedMovieInstance = e.CurrentSelection.FirstOrDefault() as Saved_Movie;
-
-            if (savedMovieInstance == null)
+            if (!(e.CurrentSelection.FirstOrDefault() is SavedMovie selectedMovie))
                 return;
 
-            await Navigation.PushAsync(new MoviePage(savedMovieInstance));
+            if (User.GetInstance().Contains(selectedMovie)) await Navigation.PushAsync(new RatedMovie(selectedMovie));
+            else await Navigation.PushAsync(new MoviePage(selectedMovie));
 
             ((CollectionView)sender).SelectedItem = null;
         }

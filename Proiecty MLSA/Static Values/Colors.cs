@@ -1,4 +1,6 @@
-﻿using Proiecty_MLSA.Themes;
+﻿using System;
+using System.Threading.Tasks;
+using Proiecty_MLSA.Themes;
 using Xamarin.Forms;
 
 namespace Proiecty_MLSA.Static_Values
@@ -10,8 +12,6 @@ namespace Proiecty_MLSA.Static_Values
         {
             var background = new LinearGradientBrush
             {
-                StartPoint = new Point(0, 0),
-                EndPoint = new Point(0, 1),
                 GradientStops = new GradientStopCollection
                 {
                     new GradientStop
@@ -31,6 +31,19 @@ namespace Proiecty_MLSA.Static_Values
                 }
             };
             return background;
+        }
+        public static async void AnimateBackground(BoxView boxViewBackground)
+        {
+            void Forward(double input) => boxViewBackground.AnchorY = (float) input;
+            void Backward(double input) => boxViewBackground.AnchorY = (float) input;
+
+            while (true)
+            {
+                boxViewBackground.Animate(name: "forward", callback: Forward, start: 0, end: 1, length: 4000, easing: Easing.SinIn);
+                await Task.Delay(6000);
+                boxViewBackground.Animate(name: "backward", callback: Backward, start: 1, end: 0, length: 4000, easing: Easing.SinIn);
+                await Task.Delay(6000);
+            }
         }
         public static void ChangeColorTheme(string v)
         {

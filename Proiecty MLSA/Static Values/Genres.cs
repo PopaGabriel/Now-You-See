@@ -1,17 +1,19 @@
 ﻿using Proiecty_MLSA.Classes;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 
 namespace Proiecty_MLSA.Static_Values
 {
-    class Genres
+    internal class Genres
     {
-        private List<Genre> _genres;
-        public static Genres Instance;
+        private ObservableCollection<Genre> _genres;
+        private static Genres _instance;
         private Genres()
         {
-            _genres = new List<Genre>();
+            _genres = new ObservableCollection<Genre>();
             FillGenres();
         }
         public Genre GetGenre(int id)
@@ -20,7 +22,7 @@ namespace Proiecty_MLSA.Static_Values
         }
         private async void FillGenres()
         {
-            using (HttpResponseMessage message = await ApiHelper.getInstance().GetClient().GetAsync(ApiHelper.GenresList))
+            using (var message = await ApiHelper.getInstance().GetClient().GetAsync(ApiHelper.GenresList))
             {
                 if (!message.IsSuccessStatusCode) return;
                 if (_genres.Count != 0) return;
@@ -29,9 +31,22 @@ namespace Proiecty_MLSA.Static_Values
                 _genres = movie.genres;
             }
         }
+
+        public override string ToString()
+        {
+            var interior = new StringBuilder();
+            foreach (var t in _genres)
+                interior.Append(t).Append('\n');
+            return interior.ToString();
+        }
+
+        public ObservableCollection<Genre> GetGenres()
+        {
+            return _genres;
+        }
         public static Genres GetInstance()
         {
-            return Instance ?? (Instance = new Genres());
+            return _instance ?? (_instance = new Genres());
         }
     }
 }

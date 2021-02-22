@@ -1,5 +1,6 @@
 ﻿
 using Foundation;
+using Lottie.Forms.iOS.Renderers;
 using UIKit;
 
 namespace Proiecty_MLSA.iOS
@@ -21,6 +22,7 @@ namespace Proiecty_MLSA.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
+            AnimationViewRenderer.Init();
 
             return base.FinishedLaunching(app, options);
         }

@@ -6,25 +6,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Lottie.Forms;
 using Xamarin.Forms;
 
 namespace Proiecty_MLSA
 {
     public partial class MainPage
     {
-        private List<Saved_Movie> NewMovies { set; get; }
+        private List<SavedMovie> NewMovies { set; get; }
         public MainPage()
         {
             Task.Run(MakePopularMovies);
-
             InitializeComponent();
-
-            ICommand refreshCommand = new Command(() =>
-            {
-                RefreshMain.IsRefreshing = false;
-            });
-            RefreshMain.Command = refreshCommand;
-
+            Task.Run(() => ColorPallet.AnimateBackground(BoxView));
         }
         public void MakePopularMovies()
         {
@@ -37,18 +31,10 @@ namespace Proiecty_MLSA
             BindingContext = this;
 
         }
-
         protected override void OnAppearing()
         {
-            StackMain.Background = ColorPallet.GetBackground();
-        }
-        private async void Recomanda(object sender, EventArgs e)
-        {
-
-            await Console.Out.WriteLineAsync(User.getInstance() + "\nDE ce?");
-
-            if (Device.RuntimePlatform == Device.Android)
-                await Navigation.PopAsync();
+            AnimationView.Animation = "Movie.json";
+            BoxView.Background = ColorPallet.GetBackground();
         }
         private async void GoToProfilePage(object sender, EventArgs e)
         {
@@ -57,17 +43,27 @@ namespace Proiecty_MLSA
 
         private async void CollectionViewMainPage_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (!(e.CurrentSelection.FirstOrDefault() is Saved_Movie selectedMovie))
+            if (!(e.CurrentSelection.FirstOrDefault() is SavedMovie selectedMovie))
                 return;
 
-            await Navigation.PushAsync(new MoviePage(selectedMovie));
+            if (User.GetInstance().Contains(selectedMovie)) await Navigation.PushAsync(new RatedMovie(selectedMovie));
+            else await Navigation.PushAsync(new MoviePage(selectedMovie));
 
             ((CollectionView)sender).SelectedItem = null;
 
         }
         private async void SearchButton_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SearchPageXama("Search...."));
+            await Navigation.PushAsync(new SearchPageXama());
+        }
+
+        private async void AnimationView_OnOnClick(object sender, EventArgs e)
+        {
+            AnimationView.PlayFrameSegment(44, 60);
+            await Task.Delay(700);
+            AnimationView.Animation = "MainButton.json";
+            //await Task.Delay(5000);
+            await Navigation.PushAsync(new SearchPageXama(await ApiHelper.getInstance().Recommend()));
         }
     }
 }

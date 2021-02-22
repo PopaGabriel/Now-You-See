@@ -2,8 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proiecty_MLSA.MainPage"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              xmlns:viewmodels="clr-namespace:Proiecty_MLSA.Classes"
-             x:DataType="viewmodels:Saved_Movie">
+             x:DataType="viewmodels:SavedMovie">
     <NavigationPage.TitleView>
         <Grid>
             <Grid.RowDefinitions>
@@ -46,65 +47,71 @@
         </Grid>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout x:Name="StackMain"
-                     Spacing="10">
-            <ImageButton x:Name="ImageSearch" 
-                         WidthRequest="250" 
-                         HeightRequest="250" 
-                         CornerRadius="250" 
-                         Margin="20"
-                         Source="bed_double_fill.jpg"               
-                         HorizontalOptions="Center"
-                         Clicked="Recomanda">
-            </ImageButton>
-            <Frame  BorderColor="{DynamicResource FrameContour}"
-                    BackgroundColor="Transparent">
-                <Label x:Name="LabelInsideTheHotReleasesFrame"
+        <Grid>
+            <BoxView x:Name="BoxView"
+                     AnchorX="1"
+                     AnchorY="0"
+                     Scale="2"/>
+            <StackLayout x:Name="StackMain"
+                         Spacing="10">
+                <forms:AnimationView
+                        x:Name="AnimationView"
+                        Animation="Movie.json"
+                        BackgroundColor ="Transparent"
+                        Loop="True"
+                        IsPlaying="True"
+                        HeightRequest="200"
+                        WidthRequest="200"
+                        VerticalOptions="FillAndExpand"
+                        HorizontalOptions="FillAndExpand"
+                        OnClick="AnimationView_OnOnClick"
+                        IsVisible="True"/>
+                    <Frame  BorderColor="{DynamicResource FrameContour}"
+                            BackgroundColor="Transparent">
+                    <Label x:Name="LabelInsideTheHotReleasesFrame"
                        TextColor="{DynamicResource TextColorInfo}"
                        Text="Fresh New Releases"
                        HorizontalTextAlignment="Center"
                        FontSize="16"/>
-            </Frame>
-            <RefreshView x:Name="RefreshMain"
-                         RefreshColor="{DynamicResource RefreshColor}">
-                <CollectionView x:Name="CollectionViewMainPage" 
-                                SelectionMode="Single"
-                                SelectionChanged="CollectionViewMainPage_SelectionChanged" >
-                    <CollectionView.ItemsLayout>
-                        <LinearItemsLayout ItemSpacing="10" 
+                </Frame>
+                    <CollectionView x:Name="CollectionViewMainPage" 
+                                    SelectionMode="Single"
+                                    SelectionChanged="CollectionViewMainPage_SelectionChanged" >
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout ItemSpacing="10" 
                                            Orientation="Vertical"/>
-                    </CollectionView.ItemsLayout>
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="viewmodels:Saved_Movie">
-                            <Grid x:Name="GridMain?" 
-                                  Padding="10"
-                                  BackgroundColor="{DynamicResource BackgroundCollectionItems}">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Image Grid.RowSpan="2"
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="viewmodels:SavedMovie">
+                                <Grid x:Name="GridMain?" 
+                                      Padding="10"
+                                      BackgroundColor="{DynamicResource BackgroundCollectionItems}">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="2"
                                         Source="{Binding poster_path}"
                                         Aspect="AspectFill"
                                         HeightRequest="60"
                                         WidthRequest="60" />
-                                <Label Grid.Row="0" Grid.Column="1"
+                                    <Label Grid.Row="0" Grid.Column="1"
                                        Text="{Binding title}"
                                        FontAttributes="Bold" />
-                                <Label Grid.Row="1"
+                                    <Label Grid.Row="1"
                                        Grid.Column="1"
                                        Text="{Binding vote_average}"
                                        FontAttributes="Italic"
                                        VerticalOptions="End" />
-                            </Grid>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </RefreshView>
-        </StackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

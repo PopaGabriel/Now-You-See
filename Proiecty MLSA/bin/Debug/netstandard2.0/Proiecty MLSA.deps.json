@@ -9,6 +9,7 @@
     ".NETStandard,Version=v2.0/": {
       "Proiecty MLSA/1.0.0": {
         "dependencies": {
+          "Com.Airbnb.Xamarin.Forms.Lottie": "3.0.4",
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "NETStandard.Library": "2.0.3",
           "Newtonsoft.Json": "12.0.3",
@@ -29,6 +30,17 @@
           "lib/netstandard1.6/Chessie.dll": {
             "assemblyVersion": "0.6.0.0",
             "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "Com.Airbnb.Xamarin.Forms.Lottie/3.0.4": {
+        "dependencies": {
+          "Xamarin.Forms": "4.8.0.1451"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Lottie.Forms.dll": {
+            "assemblyVersion": "3.0.3.0",
+            "fileVersion": "3.0.3.0"
           }
         }
       },
@@ -855,6 +867,13 @@
       "sha512": "sha512-EzfvxiU+b9WmW2C1Q4Ns2AX2IAq6I6n8P+Lv4gzKmeDoj8FD+goHLMqwoaE08E91nQwlEzxd9iwkdwf5E5YGCQ==",
       "path": "chessie/0.6.0",
       "hashPath": "chessie.0.6.0.nupkg.sha512"
+    },
+    "Com.Airbnb.Xamarin.Forms.Lottie/3.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-uwLymybcQDdobg//kyeqH6zEuPuVGBDULVYC7Cv9OQGLfCdqsmcYNEprs7z02ptx6NgolFeAT1J/Imr2P097qA==",
+      "path": "com.airbnb.xamarin.forms.lottie/3.0.4",
+      "hashPath": "com.airbnb.xamarin.forms.lottie.3.0.4.nupkg.sha512"
     },
     "FSharp.Core/4.0.1.7-alpha": {
       "type": "package",

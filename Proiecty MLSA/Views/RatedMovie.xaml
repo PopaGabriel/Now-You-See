@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Proiecty_MLSA.Views.RatedMovie"
+             xmlns:viewmodels="clr-namespace:Proiecty_MLSA.Classes"
+             x:DataType="viewmodels:SavedMovie">
+    <ContentPage.Content>
+        <Grid>
+            <BoxView x:Name="BoxView"
+                     AnchorX="1"
+                     AnchorY="0"
+                     Scale="2"/>
+            <ScrollView>
+                <StackLayout x:Name="MovieStack" 
+                             Orientation="Vertical"
+                             Spacing="0">
+                    <Frame x:Name="FrameStack" 
+                           Padding="25"
+                           Margin="0"
+                           BackgroundColor="Transparent">
+                        <StackLayout BackgroundColor="Transparent">
+                            <Image Source="{Binding poster_path}" Aspect="AspectFill" />
+                            <Frame BorderColor="{DynamicResource FrameContour}"
+                                   BackgroundColor="Transparent">
+                                <Label x:Name="NameLabel"
+                                       Text="{Binding title}"   
+                                       TextColor="{DynamicResource TextColorInfo}"
+                                       FontSize="20"
+                                       HorizontalOptions="CenterAndExpand"/>
+                            </Frame>
+                            <Frame BorderColor="{DynamicResource FrameContour}"
+                                   BackgroundColor="Transparent">
+                                <Label x:Name="MarkLabel"
+                                       TextColor="{DynamicResource TextColorInfo}"
+                                       FontSize="Body">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="TMDB Mark:    " />
+                                            <Span Text="{Binding vote_average}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Frame>
+                            <Frame BorderColor="{DynamicResource FrameContour}"
+                                   BackgroundColor="Transparent">
+                                <Label x:Name="YourMarkLabel"
+                                   FontSize="Body"
+                                   TextColor="{DynamicResource TextColorInfo}"
+                                   Text="State: RATED"/>
+                            </Frame>
+                            <Frame BorderColor="{DynamicResource FrameContour}"
+                                   BackgroundColor="Transparent">
+                                <Label x:Name="OverviewLabel"
+                                       FontSize="Body"
+                                       TextColor="{DynamicResource TextColorInfo}">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Overview:    "/>
+                                            <Span Text="{Binding overview}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Frame>
+                            <Frame BorderColor="{DynamicResource FrameContour}"
+                                   BackgroundColor="Transparent">
+                                <Label Text="Genres"
+                                       FontSize="Body"
+                                       HorizontalOptions="CenterAndExpand"
+                                       TextColor="{DynamicResource TextColorInfo}"/>
+                            </Frame>
+                            <ScrollView>
+                                <ListView x:Name="Carousel"
+                                          CachingStrategy="RecycleElement"
+                                          BackgroundColor="{DynamicResource BackgroundButton}"
+                                          ItemsSource="{Binding genres}"
+                                          HeightRequest="100">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <Label Text="{Binding }"  
+                                                       FontSize="Body"
+                                                       TextColor="{DynamicResource TextColorInfo}"
+                                                       HorizontalOptions="Center"/>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </ScrollView>
+                        </StackLayout>
+                    </Frame>
+                    <Frame BackgroundColor="Transparent"
+                           BorderColor="{DynamicResource FrameContour}"
+                           Padding="0">
+                        <Button Text="REMOVE"
+                                BorderColor="{DynamicResource FrameContour}"
+                                TextTransform="Uppercase"
+                                BackgroundColor="Transparent"
+                                TextColor="{DynamicResource TextColorInfo}"
+                                Clicked="Button_OnClicked"/>
+                    </Frame>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

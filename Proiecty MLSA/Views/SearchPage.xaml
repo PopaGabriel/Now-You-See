@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Proiecty_MLSA.SearchPageXama"
              xmlns:viewmodels="clr-namespace:Proiecty_MLSA.Classes"
-             x:DataType="viewmodels:Saved_Movie">
+             x:DataType="viewmodels:SavedMovie">
     <NavigationPage.TitleView>
         <SearchBar x:Name="NavigationBar" 
                    TextColor="{DynamicResource TextColorInfo}"
@@ -16,28 +16,30 @@
                    SearchButtonPressed="NavigationBar_OnSearchButtonPressed"/>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout>
-            <Frame  BorderColor="{DynamicResource FrameContour}"
+        <Grid>
+            <BoxView x:Name="BoxView"
+                     AnchorX="1"
+                     AnchorY="0"
+                     Scale="2"></BoxView>
+            <StackLayout>
+                <Frame  BorderColor="{DynamicResource FrameContour}"
                     BackgroundColor="Transparent">
-                <Label x:Name="LabelInsideTheHotReleasesFrame"
+                    <Label x:Name="LabelInsideTheHotReleasesFrame"
                        TextColor="{DynamicResource TextColorInfo}"
                        Text="Search Results"
                        HorizontalTextAlignment="Center"
                        FontSize="16"
                        FontAttributes="Bold"/>
-            </Frame>
-
-                <RefreshView x:Name="RefreshSearch"
-                         RefreshColor="{DynamicResource RefreshColor}">
+                </Frame>
                 <CollectionView x:Name="CollectionViewSearchPage" 
-                                SelectionMode="Single"
-                                SelectionChanged="CollectionViewMainPage_OnSelectionChanged" >
+                            SelectionMode="Single"
+                            SelectionChanged="CollectionViewMainPage_OnSelectionChanged">
                     <CollectionView.ItemsLayout>
                         <LinearItemsLayout ItemSpacing="10" 
                                            Orientation="Vertical"/>
                     </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="viewmodels:Saved_Movie">
+                        <DataTemplate x:DataType="viewmodels:SavedMovie">
                             <Grid x:Name="GridMain?" 
                                   Padding="10"
                                   BackgroundColor="{DynamicResource BackgroundCollectionItems}">
@@ -66,7 +68,7 @@
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-            </RefreshView>
-        </StackLayout>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

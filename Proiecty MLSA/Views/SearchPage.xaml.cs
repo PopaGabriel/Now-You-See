@@ -15,11 +15,22 @@ namespace Proiecty_MLSA
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SearchPageXama
     {
-        public ObservableCollection<Saved_Movie> SearchedMovies { set; get; }
-        public SearchPageXama(string name)
+        public ObservableCollection<SavedMovie> SearchedMovies { set; get; }
+
+        public SearchPageXama(ObservableCollection<SavedMovie> listOfSavedMovies)
         {
-            Background = ColorPallet.GetBackground();
             InitializeComponent();
+            BoxView.Background = ColorPallet.GetBackground();
+            Task.Run(() => ColorPallet.AnimateBackground(BoxView));
+            CollectionViewSearchPage.ItemsSource = listOfSavedMovies;
+            BindingContext = this;
+        }
+
+        public SearchPageXama()
+        {
+            InitializeComponent();
+            BoxView.Background = ColorPallet.GetBackground();
+            Task.Run(() => ColorPallet.AnimateBackground(BoxView));
         }
 
         private async void NavigationBar_OnSearchButtonPressed(object sender, EventArgs e)
@@ -30,19 +41,17 @@ namespace Proiecty_MLSA
             SearchedMovies = await apiHelper.SearchMovies(searchText);
             CollectionViewSearchPage.ItemsSource = SearchedMovies;
             BindingContext = this;
-
-            Console.Out.WriteLine(searchText);
         }
 
         private async void CollectionViewMainPage_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (!(e.CurrentSelection.FirstOrDefault() is Saved_Movie selectedMovie))
+            if (!(e.CurrentSelection.FirstOrDefault() is SavedMovie selectedMovie))
                 return;
 
-            await Navigation.PushAsync(new MoviePage(selectedMovie));
+            if (User.GetInstance().Contains(selectedMovie)) await Navigation.PushAsync(new RatedMovie(selectedMovie));
+            else await Navigation.PushAsync(new MoviePage(selectedMovie));
 
             ((CollectionView)sender).SelectedItem = null;
-
         }
     }
 }

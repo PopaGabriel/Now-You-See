@@ -4,9 +4,9 @@ namespace Proiecty_MLSA.Classes
 {
     public interface IInformationBuilder
     {
-        IInformationBuilder setAge(int age);
-        IInformationBuilder setName(String Name);
-        IInformationBuilder setAverageRating(double AverageRating);
+        IInformationBuilder SetAge(int age);
+        IInformationBuilder SetName(String Name);
+        IInformationBuilder SetAverageRating(double AverageRating);
         Information Build();
     }
 }

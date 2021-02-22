@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:Proiecty_MLSA.Classes"
-             x:DataType="viewmodels:Saved_Movie"
+             x:DataType="viewmodels:SavedMovie"
              x:Class="Proiecty_MLSA.Views.ProfilePage">
     <NavigationPage.TitleView>
         <Button
@@ -11,109 +11,115 @@
                 Clicked="ThemeButton_Clicked"/>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" 
+        <Grid>
+            <BoxView x:Name="BoxView"
+                     AnchorX="1"
+                     AnchorY="0"
+                     Scale="2"/>
+            <StackLayout Orientation="Vertical" 
                      VerticalOptions="CenterAndExpand"
                      x:Name="StackLayoutProfilePage">
-            <Label x:Name="LabelGood"
+                <Label x:Name="LabelGood"
                    BackgroundColor="{DynamicResource BackgroundMain}"
                    TextColor="{DynamicResource TextColorInfo}"
                    Text="Good Movie List" 
                    FontSize="Body"
                    HorizontalOptions="CenterAndExpand" />
-            <RefreshView x:Name="RefreshGood"
+                <RefreshView x:Name="RefreshGood"
                          RefreshColor="{DynamicResource RefreshColor}"
                          HorizontalOptions="CenterAndExpand">
-                <CollectionView x:Name="ListGoodMovies" 
+                    <CollectionView x:Name="ListGoodMovies" 
                                 Opacity="1"
                                 SelectionMode="Single"
                                 SelectionChanged="ListMovies_SelectionChanged"
                                 EmptyView="Empty list so far :(">
-                    <CollectionView.ItemsLayout>
-                        <LinearItemsLayout ItemSpacing="10"  Orientation="Vertical"/>
-                    </CollectionView.ItemsLayout>
-                    
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="viewmodels:Saved_Movie">
-                            <Grid x:Name="GridMain" 
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout ItemSpacing="10"  Orientation="Vertical"/>
+                        </CollectionView.ItemsLayout>
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="viewmodels:SavedMovie">
+                                <Grid x:Name="GridMain" 
                                   Padding="10"
                                   BackgroundColor="{DynamicResource BackgroundCollectionItems}">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Image Grid.RowSpan="2"
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="2"
                                         Source="{Binding poster_path}"
                                         Aspect="AspectFill"
                                         HeightRequest="60"
                                         WidthRequest="60" />
-                                <Label Grid.Column="1"
+                                    <Label Grid.Column="1"
                                        Text="{Binding title}"
                                        FontAttributes="Bold"
                                        TextColor="{DynamicResource TextColorInfo}"/>
-                                <Label Grid.Row="1"
+                                    <Label Grid.Row="1"
                                        Grid.Column="1"
                                        Text="{Binding vote_average}"
                                        FontAttributes="Italic"
                                        VerticalOptions="End"
                                        TextColor="{DynamicResource TextColorInfo}"/>
-                            </Grid>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </RefreshView>
-            <Label x:Name="LabelBad"
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </RefreshView>
+                <Label x:Name="LabelBad"
                    Text="Bad Movie List"
                    FontSize="Body"
                    HorizontalOptions="CenterAndExpand" />
-            <RefreshView x:Name="RefreshBad"
+                <RefreshView x:Name="RefreshBad"
                          RefreshColor="{DynamicResource RefreshColor}"
                          HorizontalOptions="CenterAndExpand">
-                <CollectionView x:Name="ListBadMovies" 
+                    <CollectionView x:Name="ListBadMovies" 
                                 SelectionMode="Single"
                                 Opacity="1"
                                 SelectionChanged="ListMovies_SelectionChanged"
                                 EmptyView="Empty list so far :(">
-                    <CollectionView.ItemsLayout>
-                        <LinearItemsLayout ItemSpacing="10"  
+                        <CollectionView.ItemsLayout>
+                            <LinearItemsLayout ItemSpacing="10"  
                                            Orientation="Vertical"/>
-                    </CollectionView.ItemsLayout>
+                        </CollectionView.ItemsLayout>
 
-                    <CollectionView.ItemTemplate>
-                        <DataTemplate x:DataType="viewmodels:Saved_Movie">
-                            <Grid Padding="10"
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="viewmodels:SavedMovie">
+                                <Grid Padding="10"
                                   BackgroundColor="{DynamicResource BackgroundCollectionItems}">
-                                <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto" />
-                                    <RowDefinition Height="Auto" />
-                                </Grid.RowDefinitions>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-                                <Image Grid.RowSpan="2"
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.RowSpan="2"
                                         Source="{Binding poster_path}"
                                         Aspect="AspectFill"
                                         HeightRequest="60"
                                         WidthRequest="60" />
-                                <Label Grid.Column="1"
+                                    <Label Grid.Column="1"
                                        Text="{Binding title}"
                                        FontAttributes="Bold"
                                        TextColor="{DynamicResource TextColorInfo}"/>
-                                <Label Grid.Row="1"
+                                    <Label Grid.Row="1"
                                        Grid.Column="1"
                                        Text="{Binding vote_average}"
                                        FontAttributes="Italic"
                                        VerticalOptions="End"
                                        TextColor="{DynamicResource TextColorInfo}"/>
-                            </Grid>
-                        </DataTemplate>
-                    </CollectionView.ItemTemplate>
-                </CollectionView>
-            </RefreshView>
-        </StackLayout>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </RefreshView>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

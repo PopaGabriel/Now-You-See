@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Text;
 
 namespace Proiecty_MLSA.Classes
 {
@@ -56,18 +58,18 @@ namespace Proiecty_MLSA.Classes
             spoken_languages = new List<SpokenLanguage>();
         }
         public bool adult { get; set; }
-        public int budget { get; set; }
-        public List<Genre> genres { get; set; }
+        public double budget { get; set; }
+        public ObservableCollection<Genre> genres { get; set; }
         public List<int> genre_ids { get; set; }
         public string homepage { get; set; }
-        public int id { get; set; }
+        public double id { get; set; }
         public string overview { get; set; }
         public double popularity { get; set; }
         public string poster_path { get; set; }
         public List<ProductionCompany> production_companies { get; set; }
         public List<ProductionCountry> production_countries { get; set; }
         public string release_date { get; set; }
-        public int revenue { get; set; }
+        public double revenue { get; set; }
         public int runtime { get; set; }
         public List<SpokenLanguage> spoken_languages { get; set; }
         public string status { get; set; }
@@ -76,39 +78,52 @@ namespace Proiecty_MLSA.Classes
         public bool video { get; set; }
         public double vote_average { get; set; }
         public int vote_count { get; set; }
-        public void fillGenres(List<int> list)
+        public void FillGenres(List<int> list)
         {
-            Genre genre;
-            for (int i = 0; i < list.Count; i++)
+            foreach (var t in list)
             {
-                genre = new Genre();
-                genre.id = list[i];
+                var genre = new Genre {id = t};
                 genres.Add(genre);
             }
         }
-        public override String ToString()
+        public override string ToString()
         {
-            return "Overview: " + overview + "\n vote_average: " + vote_average + "\nTitle: " + title + "\nPoster_Address: " + poster_path;
+            return "Overview: " + overview + 
+                   "\n vote_average: " + vote_average + 
+                   "\nTitle: " + title + 
+                   "\nPoster_Address: " + poster_path + 
+                   "\nGenres:" + ShowGenres();
+        }
+        private string ShowGenres()
+        {
+            var genresString = new StringBuilder();
+            foreach (var VARIABLE in genres)
+            {
+                genresString.Append(VARIABLE.id)
+                    .Append("\n")
+                    .Append(VARIABLE.name)
+                    .Append("\n");
+            }
+            return genresString.ToString();
         }
     }
 
-    public class Saved_Movie : Movie
-    {
-        public double savedRating { get; set; }
-        public Saved_Movie()
-        {
 
-        }
-        public Saved_Movie(double savedRating, Movie movie)
+    public class SavedMovie : Movie
+    {
+        public double SavedRating { get; set; }
+
+        public SavedMovie(double savedRating, Movie movie)
         {
             title = movie.title;
             vote_average = movie.vote_average;
             poster_path = movie.poster_path;
+            release_date = movie.release_date;
             runtime = movie.runtime;
             overview = movie.overview;
             id = movie.id;
             genres = movie.genres;
-            this.savedRating = savedRating;
+            SavedRating = savedRating;
         }
     }
 }
