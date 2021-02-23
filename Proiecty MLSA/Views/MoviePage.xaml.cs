@@ -18,12 +18,14 @@ namespace Proiecty_MLSA.Views
         {
             InitializeComponent();
             MovieStack.BindingContext = movie;
+
             this.movie = (SavedMovie) movie;
             Genres = new ObservableCollection<Genre>(movie.genres);
             Title = movie.title;
 
             BoxView.Background = ColorPallet.GetBackground();
             Task.Run(() => ColorPallet.AnimateBackground(BoxView));
+
             Carousel.ItemsSource = Genres;
         }
         protected override void OnAppearing()

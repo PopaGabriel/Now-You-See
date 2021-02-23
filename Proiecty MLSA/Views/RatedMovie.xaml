@@ -43,6 +43,19 @@
                             </Frame>
                             <Frame BorderColor="{DynamicResource FrameContour}"
                                    BackgroundColor="Transparent">
+                                <Label x:Name="ReleaseLabel"
+                                       TextColor="{DynamicResource TextColorInfo}"
+                                       FontSize="Body">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="Release Date:    " />
+                                            <Span Text="{Binding release_date}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Frame>
+                            <Frame BorderColor="{DynamicResource FrameContour}"
+                                   BackgroundColor="Transparent">
                                 <Label x:Name="YourMarkLabel"
                                    FontSize="Body"
                                    TextColor="{DynamicResource TextColorInfo}"
@@ -76,11 +89,16 @@
                                           HeightRequest="100">
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
-                                            <ViewCell>
-                                                <Label Text="{Binding }"  
-                                                       FontSize="Body"
-                                                       TextColor="{DynamicResource TextColorInfo}"
-                                                       HorizontalOptions="Center"/>
+                                            <ViewCell x:DataType="viewmodels:Genre">
+                                                <Frame x:Name="Frame"
+                                                       BorderColor="{DynamicResource FrameContour}"
+                                                       BackgroundColor="Transparent"
+                                                       Padding="0">
+                                                    <Label Text="{Binding name}"  
+                                                           FontSize="Body"
+                                                           TextColor="{DynamicResource TextColorInfo}"
+                                                           HorizontalOptions="Center"/>
+                                                </Frame>
                                             </ViewCell>
                                         </DataTemplate>
                                     </ListView.ItemTemplate>

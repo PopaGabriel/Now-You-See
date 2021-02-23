@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aIxczyQHEdS6HrqYF6bppa2jnril3TvGFBawRXP+kjakFUsGS7Bkp/NsgbjVgxLyfF4yZDt3hEyq4eG6sZOs1g==",
+  "dgSpecHash": "fEaTq2u79VrwV63k9Skmt27HvfsKeE/E57WYi0Pf99hCOb3iwlgoZyJJqB3OxosRGHEE3WEoVmzmjBxt32ADYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\Mlsa\\Now-You-See\\Proiecty MLSA.iOS\\Proiecty MLSA.iOS.csproj",
+  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\Now u see\\Now-You-See\\Proiecty MLSA.iOS\\Proiecty MLSA.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Catalin\\.nuget\\packages\\chessie\\0.6.0\\chessie.0.6.0.nupkg.sha512",
     "C:\\Users\\Catalin\\.nuget\\packages\\com.airbnb.ios.lottie\\2.5.10\\com.airbnb.ios.lottie.2.5.10.nupkg.sha512",

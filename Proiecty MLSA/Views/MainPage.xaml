@@ -73,7 +73,7 @@
                        Text="Fresh New Releases"
                        HorizontalTextAlignment="Center"
                        FontSize="16"/>
-                </Frame>
+                    </Frame>
                     <CollectionView x:Name="CollectionViewMainPage" 
                                     SelectionMode="Single"
                                     SelectionChanged="CollectionViewMainPage_SelectionChanged" >
@@ -83,9 +83,12 @@
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="viewmodels:SavedMovie">
+                                <Frame x:Name="Frame"
+                                       BorderColor="{DynamicResource FrameContour}"
+                                       BackgroundColor="Transparent"
+                                       Padding="0">
                                 <Grid x:Name="GridMain?" 
-                                      Padding="10"
-                                      BackgroundColor="{DynamicResource BackgroundCollectionItems}">
+                                      Padding="10">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />
@@ -95,19 +98,20 @@
                                         <ColumnDefinition Width="Auto" />
                                     </Grid.ColumnDefinitions>
                                     <Image Grid.RowSpan="2"
-                                        Source="{Binding poster_path}"
-                                        Aspect="AspectFill"
-                                        HeightRequest="60"
-                                        WidthRequest="60" />
+                                           Source="{Binding poster_path}"
+                                           Aspect="AspectFill"
+                                           HeightRequest="60"
+                                           WidthRequest="60" />
                                     <Label Grid.Row="0" Grid.Column="1"
-                                       Text="{Binding title}"
-                                       FontAttributes="Bold" />
+                                           Text="{Binding title}"
+                                           FontAttributes="Bold" />
                                     <Label Grid.Row="1"
-                                       Grid.Column="1"
-                                       Text="{Binding vote_average}"
-                                       FontAttributes="Italic"
-                                       VerticalOptions="End" />
+                                           Grid.Column="1"
+                                           Text="{Binding vote_average}"
+                                           FontAttributes="Italic"
+                                           VerticalOptions="End" />
                                 </Grid>
+                            </Frame>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>

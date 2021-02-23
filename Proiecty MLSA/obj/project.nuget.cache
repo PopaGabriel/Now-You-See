@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oCltkKtlFkT5qXXKGAfkSPUN8SmfAy9NgnKaVd5MisbJpS5y6VaShkugP08k8X+jzLCXDrNyZa07hpPyz0MFmA==",
+  "dgSpecHash": "1CVYtopSLJI0adhYZ17gY9XKeH2uK8yjc28ovis6ghVcr8s2Ptom7HXJ7H0UQpv357kZ7P6HEfOEApV/8r4vXw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\Mlsa\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj",
+  "projectFilePath": "C:\\Users\\Catalin\\Desktop\\Now u see\\Now-You-See\\Proiecty MLSA\\Proiecty MLSA.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Catalin\\.nuget\\packages\\chessie\\0.6.0\\chessie.0.6.0.nupkg.sha512",
     "C:\\Users\\Catalin\\.nuget\\packages\\com.airbnb.xamarin.forms.lottie\\3.0.4\\com.airbnb.xamarin.forms.lottie.3.0.4.nupkg.sha512",

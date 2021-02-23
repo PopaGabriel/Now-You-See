@@ -10,7 +10,7 @@ namespace Proiecty_MLSA
     {
         public App()
         {
-            Device.SetFlags(new[] { "Brush_Experimental" });
+            Device.SetFlags(new[] { "Shapes_Experimental", "Brush_Experimental" });
             ColorPallet.ChangeColorTheme("Girly");
             InitializeComponent();
             MainPage = new NavigationPage(new MainPage());

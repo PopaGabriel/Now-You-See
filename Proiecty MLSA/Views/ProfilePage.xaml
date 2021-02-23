@@ -20,7 +20,6 @@
                      VerticalOptions="CenterAndExpand"
                      x:Name="StackLayoutProfilePage">
                 <Label x:Name="LabelGood"
-                   BackgroundColor="{DynamicResource BackgroundMain}"
                    TextColor="{DynamicResource TextColorInfo}"
                    Text="Good Movie List" 
                    FontSize="Body"
@@ -39,33 +38,37 @@
 
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="viewmodels:SavedMovie">
-                                <Grid x:Name="GridMain" 
-                                  Padding="10"
-                                  BackgroundColor="{DynamicResource BackgroundCollectionItems}">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="Auto" />
-                                        <RowDefinition Height="Auto" />
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="Auto" />
-                                        <ColumnDefinition Width="Auto" />
-                                    </Grid.ColumnDefinitions>
-                                    <Image Grid.RowSpan="2"
-                                        Source="{Binding poster_path}"
-                                        Aspect="AspectFill"
-                                        HeightRequest="60"
-                                        WidthRequest="60" />
-                                    <Label Grid.Column="1"
-                                       Text="{Binding title}"
-                                       FontAttributes="Bold"
-                                       TextColor="{DynamicResource TextColorInfo}"/>
-                                    <Label Grid.Row="1"
-                                       Grid.Column="1"
-                                       Text="{Binding vote_average}"
-                                       FontAttributes="Italic"
-                                       VerticalOptions="End"
-                                       TextColor="{DynamicResource TextColorInfo}"/>
-                                </Grid>
+                                <Frame x:Name="Frame"
+                                       Padding="0"
+                                       BorderColor="{DynamicResource FrameContour}"
+                                       BackgroundColor="Transparent">
+                                    <Grid x:Name="GridMain" 
+                                          Padding="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Image Grid.RowSpan="2"
+                                               Source="{Binding poster_path}"
+                                               Aspect="AspectFill"
+                                               HeightRequest="60"
+                                               WidthRequest="60" />
+                                        <Label Grid.Column="1"
+                                               Text="{Binding title}"
+                                               FontAttributes="Bold"
+                                               TextColor="{DynamicResource TextColorInfo}"/>
+                                        <Label Grid.Row="1"
+                                               Grid.Column="1"
+                                               Text="{Binding vote_average}"
+                                               FontAttributes="Italic"
+                                               VerticalOptions="End"
+                                               TextColor="{DynamicResource TextColorInfo}"/>
+                                    </Grid>
+                                </Frame>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
@@ -73,7 +76,8 @@
                 <Label x:Name="LabelBad"
                    Text="Bad Movie List"
                    FontSize="Body"
-                   HorizontalOptions="CenterAndExpand" />
+                   HorizontalOptions="CenterAndExpand"
+                   TextColor="{DynamicResource TextColorInfo}"/>
                 <RefreshView x:Name="RefreshBad"
                          RefreshColor="{DynamicResource RefreshColor}"
                          HorizontalOptions="CenterAndExpand">
@@ -89,8 +93,11 @@
 
                         <CollectionView.ItemTemplate>
                             <DataTemplate x:DataType="viewmodels:SavedMovie">
-                                <Grid Padding="10"
-                                  BackgroundColor="{DynamicResource BackgroundCollectionItems}">
+                                <Frame x:Name="Frame"
+                                       Padding="0"
+                                       BorderColor="{DynamicResource FrameContour}"
+                                       BackgroundColor="Transparent">
+                                <Grid Padding="10">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="Auto" />
                                         <RowDefinition Height="Auto" />
@@ -115,6 +122,7 @@
                                        VerticalOptions="End"
                                        TextColor="{DynamicResource TextColorInfo}"/>
                                 </Grid>
+                                    </Frame>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
                     </CollectionView>
