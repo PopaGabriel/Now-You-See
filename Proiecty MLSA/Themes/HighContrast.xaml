@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    x:Class="Proiecty_MLSA.Themes.HighContrast">
+
+    <Color x:Key="BackgroundMain">#ff3a20</Color>
+
+    <Color x:Key="BackgroundCollectionItems">#e4c1f9</Color>
+
+    <Color x:Key="BackgroundButton">#2e294e</Color>
+
+    <Color x:Key="BackgroundNavigationBar">#8cff98</Color>
+
+    <Color x:Key="BackgroundInfo">#a9def9</Color>
+
+    <Color x:Key="FrameContour">#29339b</Color>
+
+    <Color x:Key="TextColorInfo">#e952de</Color>
+
+    <Color x:Key="RefreshColor">#0ead69</Color>
+</ResourceDictionary>

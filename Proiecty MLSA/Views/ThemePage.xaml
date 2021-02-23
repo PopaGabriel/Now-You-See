@@ -2,13 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Proiecty_MLSA.Static_Values"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="Proiecty_MLSA.Views.ThemePage">
     <ContentPage.Content>
         <Grid>
             <BoxView x:Name="BoxView"
                      AnchorX="1"
                      AnchorY="0"
-                     Scale="2"/>
+                     Scale="2">
+            </BoxView>
+            <forms:AnimationView
+                x:Name="AnimationView"
+                Animation="ThemePopcorn.json"
+                BackgroundColor ="Transparent"
+                Loop="True"
+                IsPlaying="True"
+                HeightRequest="200"
+                WidthRequest="200"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"
+                IsVisible="True"/>
             <StackLayout x:Name = "StackLayoutThemePage">
                 <CollectionView ItemsSource="{x:Static local:ColorPallet.ListThemes}"
                                 SelectionMode="Single"
@@ -22,6 +35,7 @@
                         <DataTemplate>
                             <Label Text="{Binding}"
                                    Opacity="1"
+                                    HorizontalTextAlignment="Center"
                                    HorizontalOptions="CenterAndExpand"
                                    VerticalOptions="CenterAndExpand"
                                    FontSize="Body"

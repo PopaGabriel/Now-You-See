@@ -104,12 +104,14 @@
                                            WidthRequest="60" />
                                     <Label Grid.Row="0" Grid.Column="1"
                                            Text="{Binding title}"
-                                           FontAttributes="Bold" />
+                                           FontAttributes="Bold"
+                                           TextColor="{DynamicResource TextColorInfo}"/>
                                     <Label Grid.Row="1"
                                            Grid.Column="1"
                                            Text="{Binding vote_average}"
                                            FontAttributes="Italic"
-                                           VerticalOptions="End" />
+                                           VerticalOptions="End" 
+                                           TextColor="{DynamicResource TextColorInfo}"/>
                                 </Grid>
                             </Frame>
                             </DataTemplate>

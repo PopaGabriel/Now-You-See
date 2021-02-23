@@ -70,6 +70,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <BundleResource Include="Resources\Movie.json" />
     <BundleResource Include="Resources\MainButton.json" />
+    <BundleResource Include="Resources\ThemePopcorn.json" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

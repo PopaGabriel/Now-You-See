@@ -127,3 +127,7 @@ C:\Users\Catalin\Desktop\Now u see\Now-You-See\Proiecty MLSA\obj\Debug\netstanda
 C:\Users\Catalin\Desktop\Now u see\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Proiecty MLSA.dll
 C:\Users\Catalin\Desktop\Now u see\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\ref\Proiecty MLSA.dll
 C:\Users\Catalin\Desktop\Now u see\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Proiecty MLSA.pdb
+C:\Users\Catalin\Desktop\Now u see\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Themes\HighContrast.xaml.g.cs
+C:\Users\Catalin\Desktop\Now u see\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Themes\Space.xaml.g.cs
+C:\Users\Catalin\Desktop\Now u see\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Themes\Nature.xaml.g.cs
+C:\Users\Catalin\Desktop\Now u see\Now-You-See\Proiecty MLSA\obj\Debug\netstandard2.0\Themes\Summer.xaml.g.cs

@@ -71,6 +71,8 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\MainButton.json" />
     <AndroidAsset Include="Assets\Movie.json" />
+    <AndroidAsset Include="Assets\ThemePopcorn.json" />
+    <AndroidAsset Include="Assets\PandaEater.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

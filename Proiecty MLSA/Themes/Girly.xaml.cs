@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Proiecty_MLSA.Themes
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Girly : ResourceDictionary
+    public partial class Girly
     {
         public Girly()
         {

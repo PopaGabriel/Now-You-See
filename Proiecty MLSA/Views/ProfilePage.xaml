@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodels="clr-namespace:Proiecty_MLSA.Classes"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:DataType="viewmodels:SavedMovie"
              x:Class="Proiecty_MLSA.Views.ProfilePage">
     <NavigationPage.TitleView>
@@ -16,6 +17,19 @@
                      AnchorX="1"
                      AnchorY="0"
                      Scale="2"/>
+            <forms:AnimationView
+                x:Name="AnimationView2"
+                Animation="PandaEater.json"
+                BackgroundColor ="Transparent"
+                ScaleX="2"
+                ScaleY="2"
+                Loop="True"
+                IsPlaying="True"
+                HeightRequest="2000"
+                WidthRequest="1000"
+                VerticalOptions="End"
+                HorizontalOptions="End"
+                IsVisible="True"/>
             <StackLayout Orientation="Vertical" 
                      VerticalOptions="CenterAndExpand"
                      x:Name="StackLayoutProfilePage">

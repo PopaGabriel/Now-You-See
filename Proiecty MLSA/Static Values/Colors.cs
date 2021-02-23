@@ -7,7 +7,7 @@ namespace Proiecty_MLSA.Static_Values
 {
     public static class ColorPallet
     {
-        public static readonly string[] ListThemes = { "Default Theme", "Red Theme","Girly Theme" };
+        public static readonly string[] ListThemes = { "Default Theme", "Red Theme","Girly Theme", "Space Theme", "HighContrast Theme", "Nature Theme", "Summer Theme" };
         public static Brush GetBackground()
         {
             var background = new LinearGradientBrush
@@ -63,6 +63,26 @@ namespace Proiecty_MLSA.Static_Values
                             mergedDictionaries.Add(new Girly());
                             break;
                         }
+                    case "Space Theme":
+                        {
+                            mergedDictionaries.Add(new Space());
+                            break;
+                        }
+                    case "HighContrast Theme":
+                        {
+                            mergedDictionaries.Add(new HighContrast());
+                            break;
+                        }
+                    case "Nature Theme":
+                        {
+                        mergedDictionaries.Add(new Nature());
+                        break;
+                        }
+                    case "Summer Theme":
+                    {
+                        mergedDictionaries.Add(new Summer());
+                        break;
+                    }
                     default:
                         {
                             mergedDictionaries.Add(new LightBlueTheme());
